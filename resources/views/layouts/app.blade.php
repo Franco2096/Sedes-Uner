@@ -11,14 +11,17 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    {!! Html::style('css/bootstrap.min.css') !!}
+    {!! Html::style('css/metisMenu.min.css') !!}
+    {!! Html::style('css/sb-admin-2.css') !!}
+    {!! Html::style('css/font-awesome.min.css') !!}
     <!-- Scripts -->
-    <script>
+    {{-- <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
-    </script>
+    </script> --}}
 </head>
 <body>
     <div id="app">
@@ -79,9 +82,17 @@
         </nav>
 
         @yield('content')
+
+
+
+
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    {!! Html::script('js/jquery.min.js') !!}
+    {!! Html::script('js/bootstrap.min.js') !!}
+    {!! Html::script('js/metisMenu.min.js') !!}
+    {!! Html::script('js/sb-admin-2.js') !!}
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 </body>
 </html>
