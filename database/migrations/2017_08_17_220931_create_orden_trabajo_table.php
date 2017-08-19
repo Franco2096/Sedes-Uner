@@ -17,7 +17,7 @@ class CreateOrdenTrabajoTable extends Migration
             $table->increments('id');
             $table->string('descripcion');
             $table->enum('estado', ['Pendiente', 'Aprobado', 'Rechazado']);
-            $table->integer('id_presupuesto');
+            $table->integer('presupuesto_id');
             $table->datetime('fecha');
             $table->timestamps();
         });

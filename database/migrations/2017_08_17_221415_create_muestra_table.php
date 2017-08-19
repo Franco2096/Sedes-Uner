@@ -17,7 +17,7 @@ class CreateMuestraTable extends Migration
             $table->increments('id');
             $table->string('nombre')->nullable();
             $table->string('descripcion')->nullable();
-            $table->integer('id_presupuesto');
+            $table->integer('presupuesto_id');
             $table->enum('estado', ['Guardada','Desechada']);
             $table->datetime('fecha_ingreso');
             $table->timestamps();
@@ -31,6 +31,6 @@ class CreateMuestraTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('muestra');
     }
 }
