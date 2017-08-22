@@ -14,7 +14,7 @@ class CreateAnalisisTable extends Migration
     public function up()
     {
       Schema::create('analisis', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_analisis');
             $table->string('nombre')->nullable();
             $table->string('descripcion')->nullable();
             $table->enum('operativo', ['Si','No']);

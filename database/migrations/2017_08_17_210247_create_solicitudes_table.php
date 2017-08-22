@@ -14,14 +14,19 @@ class CreateSolicitudesTable extends Migration
     public function up()
     {
         Schema::create('solicitudes', function (Blueprint $table) {
-            $table->increments('id_solicitudes');
-            $table->integer('cliente_id');
-            $table->integer('usuario_id');
+            $table->increments('id_solicitud');
+          
+            
             $table->string('titulo');
             $table->string('descripcion');
             $table->enum('estado', ['En espera', 'Atendida']);
             $table->datetime('fecha');
             $table->timestamps();
+            
+            $table->integer('cliente_id')->unsigned();
+            $table->foreign('cliente_id')->references('id_cliente')->on('clientes');
+            $table->integer('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('id_admin')->on('admins');
         });
     }
 
