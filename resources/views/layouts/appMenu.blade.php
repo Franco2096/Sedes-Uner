@@ -1,68 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="navbar-default sidebar" role="navigation">
-                  <div class="sidebar-nav navbar-collapse">
-                      <ul class="nav" id="side-menu">
-                          <li>
-                              <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
-                              <ul class="nav nav-second-level">
-                                  <li>
-                                      <a href="{!! URL::to('/usuarios/create') !!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
-                                  </li>
-                                  <li>
-                                      <a href="{!! URL::to('/usuarios') !!}"><i class='fa fa-list-ol fa-fw'></i> Usuarios</a>
-                                  </li>
-                              </ul>
-                          </li>
+  <div class="container-fluid">
+        <div class="row">
+          <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+            <ul class="nav nav-pills flex-column">
 
-                          <li>
-                              <a href="#"><i class="fa fa-film fa-fw"></i> Analista<span class="fa arrow"></span></a>
-                              <ul class="nav nav-second-level">
-                                  <li>
-                                      <a href="{!! URL::to('/analista/create') !!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
-                                  </li>
-                                  <li>
-                                      <a href="{!! URL::to('/analista') !!}"><i class='fa fa-list-ol fa-fw'></i> Analista</a>
-                                  </li>
-                              </ul>
-                          </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{!! URL::to('/usuarios') !!}">Usuarios</a>
+              </li>
+
+            </ul>
+            <ul class="nav nav-pills flex-column ">
+
+              <li class="nav-item" >
+                <a class="nav-link"   href="{!! URL::to('/usuarios') !!}">Reportes</a>
+              </li>
+
+            </ul>
 
 
 
+          </nav>
 
-                          <li>
-                              <a href="#"><i class="fa fa-film fa-fw"></i> Pelicula<span class="fa arrow"></span></a>
-                              <ul class="nav nav-second-level">
-                                  <li>
-                                      <a href="#"><i class='fa fa-plus fa-fw'></i> Agregar</a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><i class='fa fa-list-ol fa-fw'></i> Peliculas</a>
-                                  </li>
-                              </ul>
-                          </li>
+          <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
 
-                          <li>
-                              <a href="#"><i class="fa fa-child fa-fw"></i> Genero<span class="fa arrow"></span></a>
-                              <ul class="nav nav-second-level">
-                                  <li>
-                                      <a href="#"><i class='fa fa-plus fa-fw'></i> Agregar</a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><i class='fa fa-list-ol fa-fw'></i> Generos</a>
-                                  </li>
-                              </ul>
-                          </li>
+            @yield('tabla')
+          </main>
 
-                      </ul>
-                  </div>
-              </div>
 
-       </nav>
-       <div class="container">
+
+
+
+       {{-- <div class="container">
           @yield('tabla')
-       </div>
+       </div> --}}
 
 
 
