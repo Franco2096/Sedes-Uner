@@ -9,19 +9,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    {!! Html::style('css/dash.css') !!}
 
-    <!-- Styles -->
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
-    {!! Html::style('css/bootstrap.min.css') !!}
-    {!! Html::style('css/metisMenu.min.css') !!}
-    {!! Html::style('css/sb-admin-2.css') !!}
-    {!! Html::style('css/font-awesome.min.css') !!}
-    <!-- Scripts -->
-    {{-- <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script> --}}
+    {!! Html::style('css/app.css') !!}
+
 </head>
 <body>
     <div id="app">
@@ -81,18 +72,18 @@
             </div>
         </nav>
 
-        @yield('content')
 
+        @yield('content')
 
 
 
     </div>
 
-    <!-- Scripts -->
+
     {!! Html::script('js/jquery.min.js') !!}
     {!! Html::script('js/bootstrap.min.js') !!}
-    {!! Html::script('js/metisMenu.min.js') !!}
-    {!! Html::script('js/sb-admin-2.js') !!}
-    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    {!! Html::script('js/popper.min.js') !!}
+
+
 </body>
 </html>
