@@ -23,8 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $aux = 'Hola';
-        dd($aux);
+       
         return view('home');
 
     }

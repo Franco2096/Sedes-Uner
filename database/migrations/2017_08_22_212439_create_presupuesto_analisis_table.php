@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrdenTrabajoTable extends Migration
+class CreatePresupuestoAnalisisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,22 @@ class CreateOrdenTrabajoTable extends Migration
      */
     public function up()
     {
-        Schema::create('orden_trabajo', function (Blueprint $table) {
+        Schema::create('presupuesto_analisis', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descripcion');
-            $table->enum('estado', ['Pendiente', 'Aprobado', 'Rechazado']);
 
-            $table->datetime('fecha');
             $table->timestamps();
+            $table->decimal('precio',10,2);
+            $table->integer('analisis_id')->unsigned();
+            $table->foreign('analisis_id')->references('id')->on('analisis');
+
 
             $table->integer('presupuesto_id')->unsigned();
             $table->foreign('presupuesto_id')->references('id')->on('presupuestos');
+
+            $table->integer('analista_id')->unsigned();
+            $table->foreign('analista_id')->references('id')->on('users');
+
+            $table->string('observacion');
 
 
 
@@ -36,6 +42,6 @@ class CreateOrdenTrabajoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orden_trabajo');
+        Schema::dropIfExists('presupuesto_analisis');
     }
 }

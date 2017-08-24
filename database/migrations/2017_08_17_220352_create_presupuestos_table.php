@@ -17,9 +17,16 @@ class CreatePresupuestosTable extends Migration
             $table->increments('id');
             $table->string('descripcion')->nullable();
             $table->enum('estado', ['En Espera','Aprobado por Cliente','Rechazado']);
-            $table->integer('solicitud_id');
+
             $table->datetime('fecha_emision');
             $table->timestamps();
+
+            $table->integer('solicitud_id')->unsigned();
+            $table->foreign('solicitud_id')->references('id')->on('solicitudes');
+
+
+            $table->integer('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('id')->on('users');
         });
     }
 
