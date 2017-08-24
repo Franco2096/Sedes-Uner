@@ -1,4 +1,4 @@
-<div class="form-group">
+		<div class="form-group">
 			{!! Form::label('Nombre: ') !!}
 			{!! Form::text('name',null,['class' => 'form-control','placeholder'=> 'Ingresa nombre del usuario']) !!}
 		</div>

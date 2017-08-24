@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Redirect;
-use App\User;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 
-class usuariosController extends Controller
+use Illuminate\Http\Request;
+use App\Analisis;
+class analisisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +13,8 @@ class usuariosController extends Controller
      */
     public function index()
     {
-
-        $usuarios = User::paginate(10);
-        return view('users.index',compact('usuarios'));
+      $analisis = Analisis::paginate(10);
+      return view('analisis.index',compact('analisis'));
     }
 
     /**
@@ -28,7 +24,7 @@ class usuariosController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('analisis.create');
     }
 
     /**
@@ -39,16 +35,15 @@ class usuariosController extends Controller
      */
     public function store(Request $request)
     {
-        User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => $request['password'],
-            'tipoUser' => $request['tipoUser'],
-
-
-            ]);
-        Session::flash('message','Usuario Creado Correctamente');
-        return redirect('/usuarios');
+      Analisis::create([
+          'nombre' => $request['nombre'],
+          'descripcion' => $request['descripcion'],
+          'operativo' => $request['operativo'],
+          'precio' => $request['precio'],
+          'tipo' => $request['tipo'],
+          ]);
+      Session::flash('message','Analisis Creado Correctamente');
+      return redirect('/analisis');
     }
 
     /**
@@ -70,8 +65,8 @@ class usuariosController extends Controller
      */
     public function edit($id)
     {
-        $usuario = User::find($id);
-        return view('users.edit',['usuario'=>$usuario]);
+      $analisis = User::find($id);
+      return view('analisis.edit',['analisis'=>$analisis]);
     }
 
     /**
@@ -83,11 +78,11 @@ class usuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $usuarios = User::find($id);
-        $usuarios->fill($request->all());
-        $usuarios->save();
-        Session::flash('message','Usuario Editado Correctamente');
-        return Redirect::to('/usuarios');
+      $analisis = Analisis::find($id);
+      $analisis->fill($request->all());
+      $analisis->save();
+      Session::flash('message','Analisis Editado Correctamente');
+      return Redirect::to('/analisis');
     }
 
     /**
@@ -98,9 +93,9 @@ class usuariosController extends Controller
      */
     public function destroy($id)
     {
-        $usuarios = User::find($id);
-        $usuarios->delete();
-        Session::flash('message','Usuario Eliminado Correctamente');
-        return Redirect::to('/usuarios');
+      $analisis = Analisis::find($id);
+      $analisis->delete();
+      Session::flash('message','Analisis Eliminado Correctamente');
+      return Redirect::to('/analisis');
     }
 }

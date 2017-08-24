@@ -19,7 +19,7 @@ class CreateAnalisisTable extends Migration
             $table->string('descripcion')->nullable();
             $table->enum('operativo', ['Si','No']);
             $table->text('precio')->nullable();
-            $table->enum('tipo', ['Fisico Quimico','Microbiologico']);
+            $table->enum('tipo', ['Fisico_Quimico','Microbiologico']);
             $table->timestamps();
         });
     }
