@@ -22,6 +22,11 @@ Route::get('/home', 'HomeController@index');
 Route::resource('usuarios','usuariosController');
 Route::resource('analisis','analisisController');
 
+Route::resource('solicitud', 'solicitudController');
+
+
+Route::resource('clientes','clientesController');
+
 Route::prefix('admin')->group(function() {
 	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');

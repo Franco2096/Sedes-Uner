@@ -27,7 +27,8 @@
 
             @yield('tabla')
           </main>
-
+</div>
+</div>
 
 
 
