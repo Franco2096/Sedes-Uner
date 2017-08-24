@@ -14,16 +14,16 @@ class CreateOrdenTrabajoTable extends Migration
     public function up()
     {
         Schema::create('orden_trabajo', function (Blueprint $table) {
-            $table->increments('id_orden_trabajo');
+            $table->increments('id');
             $table->string('descripcion');
             $table->enum('estado', ['Pendiente', 'Aprobado', 'Rechazado']);
-            
+
             $table->datetime('fecha');
             $table->timestamps();
 
             $table->integer('presupuesto_id')->unsigned();
-            $table->foreign('presupuesto_id')->references('id_presupuesto')->on('presupuestos');
-            
+            $table->foreign('presupuesto_id')->references('id')->on('presupuestos');
+
 
 
         });

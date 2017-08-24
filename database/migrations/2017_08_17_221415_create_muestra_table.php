@@ -14,17 +14,17 @@ class CreateMuestraTable extends Migration
     public function up()
     {
         Schema::create('muestra', function (Blueprint $table) {
-            $table->increments('id_muestra');
+            $table->increments('id');
             $table->string('nombre')->nullable();
             $table->string('descripcion')->nullable();
-           
+
             $table->enum('estado', ['Guardada','Desechada']);
             $table->datetime('fecha_ingreso');
             $table->timestamps();
 
             $table->integer('presupuesto_id')->unsigned();
-            $table->foreign('presupuesto_id')->references('id_presupuesto')->on('presupuestos');
-            
+            $table->foreign('presupuesto_id')->references('id')->on('presupuestos');
+
         });
     }
 

@@ -14,23 +14,23 @@ class CreatePresupuestoAnalisisTable extends Migration
     public function up()
     {
         Schema::create('presupuesto_analisis', function (Blueprint $table) {
-            $table->increments('id_presupuesto_analisis');
+            $table->increments('id');
 
             $table->timestamps();
             $table->decimal('precio',10,2);
             $table->integer('analisis_id')->unsigned();
-            $table->foreign('analisis_id')->references('id_analisis')->on('analisis');
-            
+            $table->foreign('analisis_id')->references('id')->on('analisis');
+
 
             $table->integer('presupuesto_id')->unsigned();
-            $table->foreign('presupuesto_id')->references('id_presupuesto')->on('presupuestos');
+            $table->foreign('presupuesto_id')->references('id')->on('presupuestos');
 
             $table->integer('analista_id')->unsigned();
-            $table->foreign('analista_id')->references('id_user')->on('users');
+            $table->foreign('analista_id')->references('id')->on('users');
 
             $table->string('observacion');
 
-            
+
 
         });
     }
