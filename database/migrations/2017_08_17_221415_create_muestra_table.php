@@ -17,10 +17,12 @@ class CreateMuestraTable extends Migration
             $table->increments('id');
             $table->string('nombre')->nullable();
             $table->string('descripcion')->nullable();
-            $table->integer('presupuesto_id');
             $table->enum('estado', ['Guardada','Desechada']);
             $table->datetime('fecha_ingreso');
             $table->timestamps();
+
+            $table->integer('presupuesto_id')->unsigned();            
+            $table->foreign('presupuesto_id')->references('id')->on('muestra');
         });
     }
 
