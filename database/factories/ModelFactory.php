@@ -23,6 +23,18 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 
 });
+$factory->define(App\Clientes::class, function (Faker\Generator $faker) {
+
+    return [
+        'nombre' => $faker->firstName,
+        'dni' => $faker->unixTime($max = 'now') ,
+        'provincia'=>$faker->state,
+        'ciudad'=>$faker->city,
+        'direccion'=>$faker->address,
+        'email'=>$faker->email,
+    ];
+
+});
 
 $factory->define(App\Admin::class, function (Faker\Generator $faker) {
     static $password;
