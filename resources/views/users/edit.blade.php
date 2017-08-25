@@ -6,13 +6,14 @@
 		<div class="col-md-6">
 			{!! Form::model($usuario,['route' =>['usuarios.update', $usuario->id], 'method' => 'PUT']) !!}
 			@include('users.forms.user')
-			{!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
+			<div class="col-md-6">
+				{!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
+			</div>
+			<div class="col-md-6">
+				<a href="/usuarios" class="btn btn-success">Atras </a>
+			</div>
 			{!! Form::close() !!}
 
-
-
-			{!! Form::open(['route' =>['usuarios.destroy', $usuario->id], 'method' => 'DELETE']) !!}
-			{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
-			{!! Form::close() !!}
 		</div>
+
 @stop

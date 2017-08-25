@@ -9,7 +9,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{!! URL::to('/usuarios') !!}">Usuarios</a>
               </li>
-
+              <li class="nav-item">
+                <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
+              </li>
             </ul>
             <ul class="nav nav-pills flex-column ">
 
@@ -24,10 +26,9 @@
           </nav>
 
           <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
-
-            @yield('tabla')
+                @yield('tabla')
           </main>
-</div>
+      </div>
 </div>
 
 

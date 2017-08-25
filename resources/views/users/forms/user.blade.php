@@ -17,4 +17,3 @@
 			{!! Form::label('Tipo de Usuario: ') !!}
 			{!! Form::select('tipoUser', array('Fisico_Quimico' => 'Fisico Quimico', 'Microbiologico' => 'Microbiologico' ,'Usuario_Comun' => 'Usuario Comun'),null,['class' => 'form-control']) !!}
 		</div>
-</div>

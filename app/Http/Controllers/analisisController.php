@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Analisis;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 class analisisController extends Controller
 {
     /**
@@ -65,7 +67,7 @@ class analisisController extends Controller
      */
     public function edit($id)
     {
-      $analisis = User::find($id);
+      $analisis = Analisis::find($id);
       return view('analisis.edit',['analisis'=>$analisis]);
     }
 

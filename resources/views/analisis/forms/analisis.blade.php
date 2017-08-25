@@ -13,9 +13,9 @@
 			{!! Form::select('operativo', array('Si' => 'SI', 'No' => 'NO'),null,['class' => 'form-control']) !!}
 		</div>
 
-		<div class="form-group">
+		 <div class="form-group">
 			{!! Form::label('precio: ') !!}
-			{!! Form::text('precio',['class' => 'form-control','placeholder'=> 'Ingrese el precio del analisis']) !!}
+			{!! Form::text('precio',null,['class' => 'form-control','placeholder'=> 'Ingrese el precio del analisis']) !!}
 		</div>
 
 		<div class="form-group">

@@ -5,14 +5,16 @@
 
 		<div class="col-md-6">
 			{!! Form::model($analisis,['route' =>['analisis.update', $analisis->id], 'method' => 'PUT']) !!}
-			@include('users.forms.user')
-			{!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
-			{!! Form::close() !!}
+			@include('analisis.forms.analisis')
 
-
-
-			{!! Form::open(['route' =>['analisis.destroy', $analisis->id], 'method' => 'DELETE']) !!}
-			{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
+		<div class="col-md-6">
+				{!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
+		</div>
+		<div class="col-md-6">
+			<a href="/analisis" class="btn btn-success">Atras </a>
+		</div>
+			{{-- {!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
+			{!! Form::submit('Atras',['class' => 'btn btn-primary']) !!} --}}
 			{!! Form::close() !!}
 		</div>
 @stop
