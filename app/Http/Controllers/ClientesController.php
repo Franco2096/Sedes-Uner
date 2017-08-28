@@ -7,12 +7,15 @@ use App\Clientes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
+
+
 class ClientesController extends Controller
 {
     public function index()
     {
-        $clientes = Clientes::paginate(4);
-       
+//        $clientes = Clientes::get();  //::paginate(4);
+        $clientes = Clientes::paginate(10);
+      
         return view('clientes.index',compact('clientes'));
     }
 
@@ -55,7 +58,7 @@ class ClientesController extends Controller
     public function destroy($id)
     {
         $clientes = Clientes::find($id);
-        $clientes->detele();
+        $clientes->delete();
         Session::flash('message','Cliente Eliminado Correctamente');
         return Redirect::to('/clientes');
     }
