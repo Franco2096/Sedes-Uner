@@ -23,7 +23,7 @@ Route::resource('usuarios','usuariosController');
 Route::resource('analisis','analisisController');
 Route::resource('muestras', 'muestraController');
 Route::resource('solicitud', 'solicitudController');
-
+Route::resource('presupuestos', 'presupuestoController');
 
 Route::resource('clientes','clientesController');
 
