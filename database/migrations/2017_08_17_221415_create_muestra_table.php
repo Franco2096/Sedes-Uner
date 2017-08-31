@@ -17,9 +17,6 @@ class CreateMuestraTable extends Migration
             $table->increments('id');
             $table->string('nombre')->nullable();
             $table->string('descripcion')->nullable();
-
-
-
             $table->enum('estado', ['Guardada','Desechada']);
             $table->datetime('fecha_ingreso');
             $table->timestamps();

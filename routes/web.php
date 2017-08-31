@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::resource('usuarios','usuariosController');
 Route::resource('analisis','analisisController');
-
+Route::resource('muestras', 'muestraController');
 Route::resource('solicitud', 'solicitudController');
 
 

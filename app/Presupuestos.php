@@ -10,5 +10,4 @@ class Presupuestos extends Model
     protected $fillable =['descripcion','estado','solicitud_id','fecha_emision'];
 
 
-    
 }
