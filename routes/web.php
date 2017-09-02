@@ -14,18 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['middleware' => ['auth']], function () {
+  Route::resource('usuarios','usuariosController');
+  Route::resource('analisis','analisisController');
+
+  Route::resource('solicitud', 'solicitudController');
+  Route::resource('presupuestos', 'presupuestoController');
+
+  Route::resource('clientes','clientesController');
+
+});
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::resource('usuarios','usuariosController');
-Route::resource('analisis','analisisController');
 
-Route::resource('solicitud', 'solicitudController');
-Route::resource('presupuestos', 'presupuestoController');
 
-Route::resource('clientes','clientesController');
 
 Route::prefix('admin')->group(function() {
 	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
