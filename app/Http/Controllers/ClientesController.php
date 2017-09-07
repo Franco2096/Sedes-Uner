@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 
 
+
+
 class ClientesController extends Controller
 {
     public function index()
@@ -25,14 +27,19 @@ class ClientesController extends Controller
     }
     public function store(Request $request)
     {
+
         Clientes::create([
+
             'nombre' => $request['nombre'],
+
             'dni' => $request['dni'],
             'provincia' => $request['provincia'],
             'ciudad' => $request['ciudad'],
 			'direccion' => $request['direccion'],
 			'email' => $request['email'],
             ]);
+
+       
         Session::flash('message','Cliente Creado Correctamente');
         return redirect('/clientes');
     }
