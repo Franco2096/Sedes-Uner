@@ -14,7 +14,9 @@
 			width: 200px;
 		}
 	</style>
-  <a href="/usuarios/create" class="btn btn-success nuevo" >Nuevo</a>
+
+  		<a href="/usuarios/create" class="btn btn-success nuevo" >Nuevo</a>
+			
 	<table class="table">
 		<thead>
 			<th>Nombre</th>

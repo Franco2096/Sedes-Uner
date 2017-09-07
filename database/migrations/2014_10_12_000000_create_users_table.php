@@ -16,8 +16,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('tipoUser', ['Fisico_Quimico','Microbiologico','Usuario_Comun']);
+            $table->enum('rol', ['usuario','admin'])->default('usuario');
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
 
