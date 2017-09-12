@@ -12,6 +12,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
+              </li>
             </ul>
             <ul class="nav nav-pills flex-column ">
 

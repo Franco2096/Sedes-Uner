@@ -13,7 +13,7 @@ class ClientesController extends Controller
 {
     public function index()
     {
-//        $clientes = Clientes::get();  //::paginate(4);
+//        
         $clientes = Clientes::paginate(10);
       
         return view('clientes.index',compact('clientes'));
@@ -25,17 +25,29 @@ class ClientesController extends Controller
     }
     public function store(Request $request)
     {
+
+
+        if (empty(trim($request['nombre'])) || empty(trim($request['dni']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email'])))   { 
+             Session::flash('message','Cliente no creado porque no completo correctamente los campos');
+             return view('clientes.create');
+             
+         
+            }
+        else
+             {      
+
         Clientes::create([
-            'nombre' => $request['nombre'],
+            'nombre' =>$request['nombre'],
             'dni' => $request['dni'],
             'provincia' => $request['provincia'],
             'ciudad' => $request['ciudad'],
 			'direccion' => $request['direccion'],
 			'email' => $request['email'],
             ]);
-        Session::flash('message','Cliente Creado Correctamente');
+        Session::flash('message','Cliente creado correctamente');
         return redirect('/clientes');
     }
+  }
      public function show($id)
     {
         //
@@ -48,12 +60,22 @@ class ClientesController extends Controller
 
     public function update(Request $request, $id)
     {
+        if (empty(trim($request['nombre'])) || empty(trim($request['dni']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email'])))   { 
+             Session::flash('message','Cliente no editado porque no completo correctamente los campos');
+             $clientes = Clientes::find($id);
+             return view('clientes.edit',['clientes'=>$clientes]);
+             
+         
+            }
+        else
+             {      
         $clientes = Clientes::find($id);
         $clientes->fill($request->all());
         $clientes->save();
-        Session::flash('message','Cliente Editado Correctamente');
+        Session::flash('message','Cliente editado correctamente');
         return Redirect::to('/clientes');
     }
+}
 
     public function destroy($id)
     {
@@ -62,5 +84,7 @@ class ClientesController extends Controller
         Session::flash('message','Cliente Eliminado Correctamente');
         return Redirect::to('/clientes');
     }
+    
 }
+
 

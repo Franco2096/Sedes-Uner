@@ -87,9 +87,7 @@ class analisisController extends Controller
       return Redirect::to('/analisis');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
+   
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

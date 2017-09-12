@@ -8,9 +8,8 @@
  	 	{{ Session::get('message') }}
  	</div>
  	@endif
-
-	{!! Form::open(['route' => 'clientes.store', 'method'=> 'POST']) !!}
-		@include('clientes.forms.cliente')
+	{!! Form::open(['route' => 'muestras.store', 'method'=> 'POST']) !!}
+		@include('muestras.forms.muestra')
 		{!! Form::submit('Registrar',['class' => 'btn btn-primary']) !!}
 	{!! Form::close() !!}
 

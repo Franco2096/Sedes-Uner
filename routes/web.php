@@ -21,10 +21,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::resource('usuarios','usuariosController');
 Route::resource('analisis','analisisController');
-
+Route::resource('muestras', 'muestrasController');
 Route::resource('solicitud', 'solicitudController');
-
-
 Route::resource('clientes','clientesController');
 
 Route::prefix('admin')->group(function() {
