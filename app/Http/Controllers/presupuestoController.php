@@ -81,7 +81,7 @@ class presupuestoController extends Controller
     public function update(Request $request, $id)
     {
       $presupuestos = Presupuestos::find($id);
-      $presupuestos->fill($request->all());
+      //$presupuestos->fill($request->all());
 
       $presupuestos->descripcion = $request->descripcion;
       $presupuestos->estado = $request->estado;
