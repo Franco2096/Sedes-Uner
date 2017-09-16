@@ -16,7 +16,7 @@ class CreatePresupuestosTable extends Migration
         Schema::create('presupuestos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descripcion')->nullable();
-            $table->enum('estado', ['En Espera','Aprobado por Cliente','Rechazado']);
+            $table->enum('estado', ['En_Espera','Aprobado_por_Cliente','Rechazado']);
 
             $table->datetime('fecha_emision');
             $table->timestamps();

@@ -1,13 +1,12 @@
 @extends('layouts.appMenu')
-
-@if(Session::has('message'))
-	<div class="alert alert-warning alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  {{ Session::get('message') }}
- </div>
-
-
-@endif
+@section('Abajobarra')
+		@if(Session::has('message'))
+			<div class="alert alert-success alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  {{ Session::get('message') }}
+		 </div>
+		@endif
+@endsection
 
 @section('tabla')
 	<style >
@@ -15,7 +14,9 @@
 			width: 200px;
 		}
 	</style>
-  <a href="/usuarios/create" class="btn btn-success nuevo" >Nuevo</a>
+
+  		<a href="/usuarios/create" class="btn btn-success nuevo" >Nuevo</a>
+			
 	<table class="table">
 		<thead>
 			<th>Nombre</th>

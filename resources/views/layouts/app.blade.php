@@ -48,7 +48,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -71,6 +71,7 @@
                 </div>
             </div>
         </nav>
+        @yield('Abajobarra')
 
 
         @yield('content')
@@ -82,7 +83,7 @@
 
     {!! Html::script('js/jquery.min.js') !!}
     {!! Html::script('js/bootstrap.min.js') !!}
-    {!! Html::script('js/popper.min.js') !!}
+
 
 
 </body>
