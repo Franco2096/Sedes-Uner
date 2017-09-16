@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrdenAnalistasTable extends Migration
+class CreateAnalisisPresupuestosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,24 @@ class CreateOrdenAnalistasTable extends Migration
      */
     public function up()
     {
-        Schema::create('orden_analistas', function (Blueprint $table) {
+       Schema::create('analisis_presupuestos', function (Blueprint $table) {
             $table->increments('id');
+
             $table->timestamps();
+            $table->decimal('precio',10,2);
+            $table->integer('analisis_id')->unsigned();
+            $table->foreign('analisis_id')->references('id')->on('analisis');
+
+
+            $table->integer('presupuesto_id')->unsigned();
+            $table->foreign('presupuesto_id')->references('id')->on('presupuestos');
 
             $table->integer('analista_id')->unsigned();
             $table->foreign('analista_id')->references('id')->on('users');
 
-            $table->integer('orden_trabajo_id')->unsigned();
-            $table->foreign('orden_trabajo_id')->references('id')->on('orden_trabajo');
-
-            $table->integer('presupuesto_analisis_id')->unsigned();
-            $table->foreign('presupuesto_analisis_id')->references('id')->on('presupuesto_analisis');
-            $table->string('resultado');
             $table->string('observacion');
+
+
 
         });
     }
@@ -38,6 +42,6 @@ class CreateOrdenAnalistasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orden_analistas');
+        Schema::dropIfExists('analisis_presupuestos');
     }
 }

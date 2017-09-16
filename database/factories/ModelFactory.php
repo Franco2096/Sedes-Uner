@@ -26,7 +26,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Clientes::class, function (Faker\Generator $faker) {
 
     return [
-        'nombre' => $faker->firstName,
+        'nombre' => $faker->firstName.' '.$faker->lastName,
         'dni' => $faker->unixTime($max = 'now') ,
         'provincia'=>$faker->state,
         'ciudad'=>$faker->city,
@@ -40,9 +40,9 @@ $factory->define(App\Admin::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => "mati",
-        'email' => "mati@gmail.com",
-        'password' => $password ?: $password = bcrypt('secret'),
+        'name' => "Capo",
+        'email' => "cachin@cacho.com",
+        'password' => $password ?: $password = bcrypt('123456'),
         'remember_token' => str_random(10),
     ];
 
