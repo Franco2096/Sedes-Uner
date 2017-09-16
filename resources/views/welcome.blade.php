@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #302F4A;
+                background-color: #20326A;
                 color: white;
                 font-family: 'Open Sans', Arial, sans-serif;
                 font-size: 14px;
@@ -49,7 +49,20 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #FDFBFB;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+            .topmenu>a{
+                height: 50px;
+                width: 40px;
+                background-color:#5674C4; 
+                border-radius: 5px;
+                color: #FDFBFB;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -66,7 +79,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right topmenu">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Pagina principal</a>
                     @else
