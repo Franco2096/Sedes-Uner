@@ -2,35 +2,32 @@
 	
  		<div class="form-group"  style="width: 500px">
 			{!! Form::label('Nombre: ') !!}
-<<<<<<< HEAD
+
 			{!! Form::text('nombre', null,['class' => 'form-control','placeholder'=> 'Ingresa nombre del cliente',"required"])  !!}
 
-=======
-			{!! Form::text('nombre',null,['class' => 'form-control',"id='nombre'", 'placeholder',"required","pattnern [A-Za-z]","onkeypress='validar(\"nombre\")'"])!!}
->>>>>>> master
+
 		</div>
 
 	    <div class="form-group"  style="width: 300px">
 			{!! Form::label('Dni: ') !!}
-<<<<<<< HEAD
+
 			{!! Form::text('dni',null,['class' => 'form-control','placeholder'=> 'Ingresa dni del cliente',"required"]) !!}
-=======
-			{!! Form::text('dni',null,['class' => 'form-control','placeholder','required'=> 'Ingresa dni del cliente']) !!}
->>>>>>> master
+
+			
+
 		</div>
 
 		<div class="form-group"  style="width: 500px">
 			{!! Form::label('Provincia: ') !!}
-<<<<<<< HEAD
-			{!! Form::text('provincia',null,['class' => 'form-control','placeholder'=> 'Ingresa la provincia del cliente',"required"]) !!}
-=======
-			{!! Form::text('provincia',null,['class' => 'form-control','placeholder' , 'required'=> 'Ingresa la provincia del cliente']) !!}
->>>>>>> master
+
+			{!! Form::text('Provincia',null,['class' => 'form-control','placeholder'=> 'Ingresa la provincia del cliente',"required"]) !!}
+
+		
 		</div>
 
 		<div class="form-group"  style="width: 500px">
-			{!! Form::label('ciudad: ') !!}
-<<<<<<< HEAD
+			{!! Form::label('Ciudad: ') !!}
+
 			{!! Form::text('ciudad',null,['class' => 'form-control','placeholder'=> 'Ingresa la ciudad del cliente',"required"]) !!}
 		</div>
 		<div class="form-group"  style="width: 500px">
@@ -43,17 +40,8 @@
 		</div>
 	
 
-=======
-			{!! Form::text('ciudad',null,['class' => 'form-control','placeholder' , 'required'=> 'Ingresa la ciudad del cliente']) !!}
-		</div>
-		<div class="form-group"  style="width: 500px">
-			{!! Form::label('Direccion: ') !!}
-			{!! Form::text('direccion',null,['class' => 'form-control','placeholder', 'required'=> 'Ingresa la direccion del cliente']) !!}
-		</div>
-		<div class="form-group"  style="width: 500px">
-			{!! Form::label('Email: ') !!}
-			{!! Form::email('email',null,['class' => 'form-control','placeholder' ,'required'=> 'Ingresa la email del cliente']) !!}
-		</div>
+
+		
 
 
 <script type="text/javascript">  
@@ -88,4 +76,4 @@ document.getElementById(id).focus();
 */
 
 </script>
->>>>>>> master
+
