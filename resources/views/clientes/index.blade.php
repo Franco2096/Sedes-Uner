@@ -8,7 +8,7 @@
 
 
 @endif
-@extends('layouts.appMenu')
+
 
 @section('Abajobarra')
 		@if(Session::has('message'))

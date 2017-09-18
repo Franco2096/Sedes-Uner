@@ -28,7 +28,7 @@ class ClientesController extends Controller
     public function store(Request $request)
     { 
 
-        if (empty(trim($request('nombre')))|| empty(trim($request('dni')))|| empty(trim($request('provincia')))|| empty(trim($request('ciudad')))|| empty(trim($request('direccion')))|| empty(trim($request('email')))){
+        if (empty(trim($request['nombre']))|| empty(trim($request['dni']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email']))){
 
              Session::flash('message','Cliente Creado Correctamente');
              return redirect('/clientes');
