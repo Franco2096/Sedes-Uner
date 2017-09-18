@@ -33,8 +33,8 @@
 			<td>{{ $presupuesto->descripcion }}</td>
 			<td>{{ $presupuesto->estado }}</td>
 			<td>{{ $presupuesto->fecha_emision }}</td>
-			<td>{{ $presupuesto->solicitud_id }}</td>
-			<td>{{ $presupuesto->usuario_id }}</td>
+			<td>{{ $presupuesto->titulo }}</td>
+			<td>{{ $presupuesto->name }}</td>
 
 
 

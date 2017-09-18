@@ -13,5 +13,5 @@
 	{!! Form::textarea('descripcion',null,['class' => 'form-control','placeholder'=> 'Ingresa descripción de la solicitud']) !!}
 </div>
 <div>
-{!! Form::select('cliente_id', $cliente->pluck('nombre'), ['class' => 'form-control m-bot15']) !!}
+{!! Form::select('cliente_id', $cliente, 'id', ['class' => 'form-control m-bot15']) !!}
 </div>
