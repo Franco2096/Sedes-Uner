@@ -26,8 +26,15 @@ class ClientesController extends Controller
         return view('clientes.create');
     }
     public function store(Request $request)
-    {
+    { 
 
+        if (empty(trim($request('nombre')))|| empty(trim($request('dni')))|| empty(trim($request('provincia')))|| empty(trim($request('ciudad')))|| empty(trim($request('direccion')))|| empty(trim($request('email')))){
+
+             Session::flash('message','Cliente Creado Correctamente');
+             return redirect('/clientes');
+       
+           }
+            else{
         Clientes::create([
 
             'nombre' => $request['nombre'],
@@ -43,6 +50,7 @@ class ClientesController extends Controller
         Session::flash('message','Cliente Creado Correctamente');
         return redirect('/clientes');
     }
+}
      public function show($id)
     {
         //

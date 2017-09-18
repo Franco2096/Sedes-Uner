@@ -26,36 +26,3 @@
 			{!! Form::email('email',null,['class' => 'form-control','placeholder' ,'required'=> 'Ingresa la email del cliente']) !!}
 		</div>
 
-
-<script type="text/javascript">  
-
-function validar(id) {
-	var input = document.getElementById(id).value;
-	var t = input.split('');
-	
-	if (input == ' ' || t[0] == ' ' || input == null) {
-	//	alert('Debe ingresar un dato ');
-		document.getElementById(id).value="";
-      
-
-		document.getElementById(id).focus();
-	}
-	if(document.getElementById(id).value == null) {
-		
-		document.frm.nombre.focus();
-		
-	}
-}
-
-
-/*function validar (id)
-{
-	var str = document.getElementById(id).value;
-
-document.getElementById(id).value=str.replace(/^\s*|\s*$/g,"");
-document.getElementById(id).focus();
-
-}
-*/
-
-</script>
