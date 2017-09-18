@@ -15,11 +15,13 @@
 
 		<div class="form-group">
 			{!! Form::label('Solicitud asociada: ') !!}
-			{!! Form::text('solicitud_id',null,['class' => 'form-control']) !!}
+			{!! Form::select('solicitud_id', $solicitud, ['class' => 'form-control m-bot15']) !!}
 		</div>
 
 
 		<div class="form-group">
 			{!! Form::label('Usuario asociado: ') !!}
-			{!! Form::text('usuario_id',$usuario,['class' => 'form-control ','readonly']) !!}
+			{!! Form::text('usuario_id',$usuario, ['class' => 'form-control ','readonly']) !!}
 		</div>
+
+		
