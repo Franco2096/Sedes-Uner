@@ -7,20 +7,6 @@
             <ul class="nav nav-pills flex-column">
 
 
-              <li class="nav-item">
-                <a class="nav-link" href="{!! URL::to('/usuarios') !!}">Usuarios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="{!! URL::to('/muestras') !!}">Muestras</a>
-              </li>
-
                 @if (Auth::user()->rol == 'admin')
 
                     <li class="nav-item">

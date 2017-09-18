@@ -39,9 +39,7 @@ class ClientesController extends Controller
         else
              {      
 
-        Clientes::create([
-            'nombre' =>$request['nombre'],
-
+ 
         Clientes::create([
 
             'nombre' => $request['nombre'],
@@ -51,14 +49,13 @@ class ClientesController extends Controller
             'provincia' => $request['provincia'],
             'ciudad' => $request['ciudad'],
 			'direccion' => $request['direccion'],
-			'email' => $request['email'],
+			'email' => $request['email']
             ]);
 
         Session::flash('message','Cliente creado correctamente');
 
-
+   
        
-        Session::flash('message','Cliente Creado Correctamente');
 
         return redirect('/clientes');
     }
