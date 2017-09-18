@@ -30,7 +30,7 @@ class ClientesController extends Controller
 
         if (empty(trim($request['nombre']))|| empty(trim($request['dni']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email']))){
 
-             Session::flash('message','Cliente Creado Correctamente');
+             Session::flash('message','El cliente no fue creado porque no se completaron correctamente los campos');
              return redirect('/clientes');
        
            }
@@ -63,12 +63,20 @@ class ClientesController extends Controller
 
     public function update(Request $request, $id)
     {
+        if (empty(trim($request['nombre']))|| empty(trim($request['dni']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email']))){
+
+             Session::flash('message','El cliente no fue editado porque no se completaron correctamente los campos');
+             return redirect('/clientes');
+       
+           }
+           else{
         $clientes = Clientes::find($id);
         $clientes->fill($request->all());
         $clientes->save();
         Session::flash('message','Cliente Editado Correctamente');
         return Redirect::to('/clientes');
     }
+}
 
     public function destroy($id)
     {
