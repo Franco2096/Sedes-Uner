@@ -10,7 +10,7 @@
 
 		<div class="form-group"  style="width: 500px">
 			{!! Form::label('Presupuesto_id: ') !!}
-			
+			{!! Form::text('presupuesto_id',null,['class' => 'form-control','placeholder', 'required pattnern="[A-Za-z0-9]{5,40}'=> 'Ingresa presupuesto']) !!}
 		</div>
 
 		<div class="form-group">
