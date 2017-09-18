@@ -49,22 +49,15 @@ Auth::routes();
      Route::resource('usuarios','usuariosController');
  });
 
-<<<<<<< HEAD
-=======
+
 Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function()
 {
     
 });
-// Route::group(['middleware' => ['web', 'admin']], function () {
-//     //
-// });
+ Route::group(['middleware' => ['web', 'admin']], function () {
 
-
-
-
->>>>>>> eb756660f3734caa2e62d37ea5231ee151d41d13
 
  Route::prefix('admin')->group( function() {
   	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
