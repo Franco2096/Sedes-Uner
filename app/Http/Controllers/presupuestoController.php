@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use App\Presupuestos;
+use App\Solicitud;
+use App\User;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 class presupuestoController extends Controller
 {
     /**
@@ -13,7 +18,11 @@ class presupuestoController extends Controller
      */
     public function index()
     {
-      $presupuestos = Presupuestos::paginate(10);
+         $presupuestos = DB::table('presupuestos')
+            ->join('solicitudes', 'solicitudes.id', '=', 'presupuestos.solicitud_id')
+            ->join('users', 'users.id', '=', 'presupuestos.usuario_id')
+            ->select('presupuestos.*', 'solicitudes.titulo', 'users.name')
+            ->paginate(10);
       return view('presupuesto.index',compact('presupuestos'));
     }
 
@@ -25,8 +34,9 @@ class presupuestoController extends Controller
     public function create()
     {
         $usuario = Auth::user()->name;
+        $solicitud = Solicitud::all()->pluck('titulo', 'id');
 
-        return view('presupuesto.create',compact('usuario'));
+        return view('presupuesto.create',compact('usuario','solicitud'));
     }
 
     /**
@@ -38,6 +48,7 @@ class presupuestoController extends Controller
     public function store(Request $request)
     {
       Presupuestos::create([
+
           'descripcion' => $request['descripcion'],
           'estado' => $request['estado'],
           'fecha_emision' => $request['fecha_emision'],
@@ -68,7 +79,14 @@ class presupuestoController extends Controller
     public function edit($id)
     {
       $presupuestos = Presupuestos::find($id);
-      return view('presupuestos.edit',['presupuestos'=>$presupuestos]);
+      $solicitud = Solicitud::all()->pluck('titulo','id');
+
+      $usuario = User::all()->pluck('name','id');
+
+
+     //$solicitud = Solicitud::all()->pluck('titulo', 'id');
+       return view('presupuesto.edit',compact('presupuestos','usuario','solicitud'));
+      
     }
 
     /**

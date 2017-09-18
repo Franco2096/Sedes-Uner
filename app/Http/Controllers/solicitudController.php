@@ -22,8 +22,8 @@ class solicitudController extends Controller
     {
         $solicitudes = DB::table('solicitudes')
             ->join('clientes', 'clientes.id', '=', 'solicitudes.cliente_id')
-            ->join('admins', 'admins.id', '=', 'solicitudes.usuario_id')
-            ->select('solicitudes.*', 'clientes.nombre', 'admins.name')
+            ->join('users', 'users.id', '=', 'solicitudes.usuario_id')
+            ->select('solicitudes.*', 'clientes.nombre', 'users.name')
             ->paginate(10);
 
         //$solicitudes = Solicitud::paginate(10);
@@ -37,8 +37,9 @@ class solicitudController extends Controller
      */
     public function create()
     {
-         $cliente = Clientes::all(['id', 'nombre']);
-         return view('solicitud.create', compact('cliente', $cliente));
+         $cliente = Clientes::all()->pluck('nombre', 'id');
+
+          return view('solicitud.create',['cliente'=> $cliente]);
          //return view('solicitud.create');
          
     }
