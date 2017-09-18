@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 
 
+
+
 class ClientesController extends Controller
 {
     public function index()
@@ -27,6 +29,7 @@ class ClientesController extends Controller
     {
 
 
+
         if (empty(trim($request['nombre'])) || empty(trim($request['dni']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email'])))   { 
              Session::flash('message','Cliente no creado porque no completo correctamente los campos');
              return view('clientes.create');
@@ -38,13 +41,25 @@ class ClientesController extends Controller
 
         Clientes::create([
             'nombre' =>$request['nombre'],
+
+        Clientes::create([
+
+            'nombre' => $request['nombre'],
+
+
             'dni' => $request['dni'],
             'provincia' => $request['provincia'],
             'ciudad' => $request['ciudad'],
 			'direccion' => $request['direccion'],
 			'email' => $request['email'],
             ]);
+
         Session::flash('message','Cliente creado correctamente');
+
+
+       
+        Session::flash('message','Cliente Creado Correctamente');
+
         return redirect('/clientes');
     }
   }

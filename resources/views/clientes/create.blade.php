@@ -11,7 +11,7 @@
 
 	{!! Form::open(['route' => 'clientes.store', 'method'=> 'POST']) !!}
 		@include('clientes.forms.cliente')
-		{!! Form::submit('Registrar',['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Registrar',['class' => 'btn btn-primary',"onClick='verificar_campos()'"]) !!}
 	{!! Form::close() !!}
 
 
