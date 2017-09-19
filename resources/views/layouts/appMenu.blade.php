@@ -24,10 +24,12 @@
                         <a class="nav-link" href="{!! URL::to('/solicitud') !!}">Solicitud</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/presupuesto') !!}">Presupuestos</a>
+                        <a class="nav-link" href="{!! URL::to('/presupuestos') !!}">Presupuestos</a>
                     </li>
 
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/muestras') !!}">Muestras</a>
+                    </li>
 
                 @else
 

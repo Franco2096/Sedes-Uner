@@ -4,8 +4,8 @@
 @include('alerts.request')
 				
 		<div class="col-md-6">
-			{!! Form::model($Muestra,['route' =>['muestras.update', $Muestra->id], 'method' => 'PUT']) !!}
-			@include('muestras.forms.cliente')
+			{!! Form::model($muestras,['route' =>['muestras.update', $muestras->id], 'method' => 'PUT']) !!}
+			@include('muestras.forms.muestras')
 			<div class="col-md-6">
 
 			    <a href="/muestras" class="btn btn-primary">Regresar </a>
