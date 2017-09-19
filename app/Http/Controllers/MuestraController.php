@@ -41,7 +41,7 @@ class MuestraController extends Controller
         if (empty(trim($request['nombre']))|| empty(trim($request['descripcion']))|| empty(trim($request['presupuesto_id']))|| empty(trim($request['estado']))){
 
              Session::flash('message','La muestra no fue creada porque no se completaron correctamente los campos');
-             return redirect('/clientes');
+             return redirect('/muestras');
        
            }
             else{
@@ -77,7 +77,7 @@ class MuestraController extends Controller
         if (empty(trim($request['nombre']))|| empty(trim($request['descripcion']))|| empty(trim($request['presupuesto_id']))|| empty(trim($request['estado']))){
 
              Session::flash('message','La muestra no fue creada porque no se completaron correctamente los campos');
-             return redirect('/clientes');
+             return redirect('/muestras');
        
            }
         else{
