@@ -57,16 +57,15 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+           
             .topmenu>a{
-                height: 50px;
-                width: 40px;
+                display: inline-block;
                 background-color:#5674C4; 
                 border-radius: 5px;
                 color: #FDFBFB;
-                padding: 0 25px;
+                padding: 10px;
                 font-size: 12px;
                 font-weight: 600;
-                letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
             }
@@ -82,9 +81,9 @@
                 <div class="top-right topmenu">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Pagina principal</a>
-                    @else
-                        <a href="{{ url('/login') }}">Iniciar sesión</a>
-                        <a href="{{ url('/register') }}" >Registrarse</a>
+                    @else                       
+                        <a class="botones_welcome" href="{{ url('/login') }}">Iniciar sesión</a>
+                        <!--a href="{{ url('/register') }}" >Registrarse</a> --> 
                     @endif
                 </div>
             @endif
