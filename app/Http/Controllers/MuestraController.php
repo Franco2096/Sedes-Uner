@@ -16,14 +16,21 @@ class MuestraController extends Controller
     
     public function index()
     {
-
+        if (Auth::user()->rol == 'admin'){
          $muestras = DB::table('muestra')
             ->join('presupuestos', 'muestra.presupuesto_id', '=', 'presupuestos.id')
             ->select('muestra.*',  'presupuestos.descripcion as des')
             ->paginate(10);
 
         
-        return view('muestras.index',compact('muestras'));
+        return view('muestras.index',compact('muestras'));}
+
+        else{
+
+       
+            $alert="Usted no puede acceder a esta parte del sistema";
+        
+        }
     }
 
     
