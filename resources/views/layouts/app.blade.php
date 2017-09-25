@@ -44,8 +44,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest()) <!--Se comento este login y registro del app-blade del login-->
-                            <!--<li><a href="{{ route('login') }}">Iniciar sesión</a></li>
-                            <li><a href="{{ route('register') }}">Registrarse</a></li>-->
+                            <li><a href="{{ route('login') }}">Iniciar sesión</a></li>
+                            <li><a href="{{ route('register') }}">Registrarse</a></li>
                         @else
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
