@@ -10,7 +10,10 @@
 /*
  * Typography
  */
-
+.footer{
+  position: bottom;
+  background-color:#CFE6EE;
+}
 .menu_izq_blade{
   background-color:#20326a;
   border-radius: 5px;

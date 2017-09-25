@@ -69,7 +69,10 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
+            .footer{
+              position: bottom;
+              background-color:#CFE6EE;
+            }
             .m-b-md {
                 margin-bottom: 30px;
             }
