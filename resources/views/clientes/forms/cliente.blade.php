@@ -1,6 +1,6 @@
 		<div class="form-group"  style="width: 500px">
 			{!! Form::label('Nombre: ') !!}
-			{!! Form::text('nombre',null,['class' => 'form-control',"id='nombre'", 'placeholder',"required","pattnern [A-Za-z]","onkeypress='validar(\"nombre\")'"])!!}
+			{!! Form::text('nombre',null,['class' => 'form-control',"id='nombre'", 'placeholder',"required"])!!}
 		</div>
 
 	    <div class="form-group"  style="width: 300px">
