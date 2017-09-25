@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
     <head>
@@ -100,3 +101,5 @@
     </body>
     
 </html>
+=======
+>>>>>>> master

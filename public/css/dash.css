@@ -11,6 +11,24 @@
  * Typography
  */
 
+.menu_izq_blade{
+  background-color:#20326a;
+  border-radius: 5px;
+  
+}
+.menu_izq_blade a{
+  color:#fff;
+}
+.cuerpo{
+  background-color:#20326A;
+}
+.cuerpo_logo{
+background-color: #CFE6EE;
+}
+
+a{
+  color: #fff;
+}
 h1 {
   margin-bottom: 20px;
   padding-bottom: 9px;
