@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>UNER</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -13,12 +13,11 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
+                background-color: #20326A;
+                color: white;
+                font-family: 'Open Sans', Arial, sans-serif;
+                font-size: 14px;
+                line-height: 1.5em;
             }
 
             .full-height {
@@ -50,11 +49,23 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #FDFBFB;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+           
+            .topmenu>a{
+                display: inline-block;
+                background-color:#5674C4; 
+                border-radius: 5px;
+                color: #FDFBFB;
+                padding: 10px;
+                font-size: 12px;
+                font-weight: 600;
                 text-decoration: none;
                 text-transform: uppercase;
             }
@@ -67,23 +78,23 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right topmenu">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}" >Register</a>
+                        <a href="{{ url('/home') }}">Pagina principal</a>
+                    @else                       
+                        <a class="botones_welcome" href="{{ url('/login') }}">Iniciar sesión</a>
+                        <!--a href="{{ url('/register') }}" >Registrarse</a> --> 
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    UNER
                 </div>
 
                 <div class="links">
-                    <a href="http://www.fb.uner.edu.ar">Facultad de Bromatología - UNER</a>
+                    <a href="http://www.fb.uner.edu.ar">Facultad de Bromatología</a>
                 </div>
             </div>
         </div>
