@@ -10,7 +10,10 @@
 /*
  * Typography
  */
-
+.headerlogin{
+  background-color:#302F4A;
+  color: #ffff;
+}
 h1 {
   margin-bottom: 20px;
   padding-bottom: 9px;
