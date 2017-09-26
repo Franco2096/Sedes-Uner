@@ -85,4 +85,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/windows,laravel,composer,sublimetext
-resources/views/layouts/app.blade.php
