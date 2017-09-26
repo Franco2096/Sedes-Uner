@@ -21,6 +21,6 @@
 		</div>
 		<div class="form-group"  >
 			{!! Form::label('Fecha ingreso: ') !!}
-			{!! Form::date('fecha_ingreso',null,['class' => 'datepicker','placeholder', 'required'=> 'Ingresa fecha de ingreso']) !!}
+			{!! Form::date('fecha_ingreso', \Carbon\Carbon::now()) !!}
 		</div>
 		
