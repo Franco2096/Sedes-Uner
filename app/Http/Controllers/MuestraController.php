@@ -26,10 +26,9 @@ class MuestraController extends Controller
         return view('muestras.index',compact('muestras'));}
 
         else{
-
+        Session::flash('message', 'Usted no tiene acceso a esta parte del sistema');
+        return Redirect::to('/home');
        
-            $alert="Usted no puede acceder a esta parte del sistema";
-        
         }
     }
 
