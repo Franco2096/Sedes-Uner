@@ -1096,7 +1096,11 @@
         },
         {
             "name": "symfony/console",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -1164,7 +1168,11 @@
         },
         {
             "name": "symfony/css-selector",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -1217,7 +1225,11 @@
         },
         {
             "name": "symfony/debug",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -1273,7 +1285,11 @@
         },
         {
             "name": "symfony/event-dispatcher",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -1336,7 +1352,11 @@
         },
         {
             "name": "symfony/finder",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -1385,7 +1405,11 @@
         },
         {
             "name": "symfony/http-foundation",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
@@ -1438,6 +1462,18 @@
         },
         {
             "name": "symfony/http-kernel",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-kernel.git",
+                "reference": "8a36ee80d83de2f171de0b7efc19fefc14202734"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/8a36ee80d83de2f171de0b7efc19fefc14202734",
+                "reference": "8a36ee80d83de2f171de0b7efc19fefc14202734",
+=======
             "version": "v3.3.8",
             "source": {
                 "type": "git",
@@ -1448,6 +1484,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/http-kernel/zipball/1c1717d28904744dc9a9f6a9d97a8b9bed1680e9",
                 "reference": "1c1717d28904744dc9a9f6a9d97a8b9bed1680e9",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
                 "shasum": ""
             },
             "require": {
@@ -1520,7 +1557,11 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
+            "time": "2017-08-28T19:34:14+00:00"
+=======
             "time": "2017-08-28T22:35:03+00:00"
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1583,7 +1624,11 @@
         },
         {
             "name": "symfony/process",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -1632,7 +1677,11 @@
         },
         {
             "name": "symfony/routing",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -1710,7 +1759,11 @@
         },
         {
             "name": "symfony/translation",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -1775,7 +1828,11 @@
         },
         {
             "name": "symfony/var-dumper",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
@@ -3310,7 +3367,11 @@
         },
         {
             "name": "symfony/yaml",
+<<<<<<< HEAD
+            "version": "v3.3.7",
+=======
             "version": "v3.3.8",
+>>>>>>> 4863b73f495113125e4147146d0f05bdcf935466
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",

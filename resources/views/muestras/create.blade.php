@@ -5,13 +5,12 @@
   {{ Session::get('message') }}
  </div>
 
-
-@endif
+ @endif
 @section('tabla')
 	@include('alerts.request')
-	{!! Form::open(['route' => 'clientes.store', 'method'=> 'POST']) !!}
-		@include('clientes.forms.cliente')
-		{!! Form::submit('Registrar',['class' => 'btn btn-primary',"onClick='verificar_campos()'"]) !!}
+	{!! Form::open(['route' => 'muestras.store', 'method'=> 'POST']) !!}
+		@include('muestras.forms.muestras')
+		{!! Form::submit('Registrar',['class' => 'btn btn-primary']) !!}
 	{!! Form::close() !!}
 
 

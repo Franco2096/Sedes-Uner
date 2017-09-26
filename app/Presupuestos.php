@@ -11,4 +11,14 @@ class Presupuestos extends Model
 
 
 
+    public function Clientes()
+    {
+        return $this->belongsTo('App\Clientes');
+    }
+       public function Muestra()
+    {
+        return $this->hasMany('App\Muestra');
+    }
+
+
 }

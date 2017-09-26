@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use App\User;
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,13 @@ class usuariosController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        if (Auth::user()->rol == 'admin'){
+            return view('users.create');
+        }
+        else {
+            Session::flash('message','Usted no es usuario Administrador');
+            return redirect('/usuarios');
+        }
     }
 
     /**
@@ -70,8 +77,16 @@ class usuariosController extends Controller
      */
     public function edit($id)
     {
-        $usuario = User::find($id);
-        return view('users.edit',['usuario'=>$usuario]);
+        if (Auth::user()->rol == 'admin'){
+            $usuario = User::find($id);
+            return view('users.edit',['usuario'=>$usuario]);
+        }
+        else {
+            Session::flash('message','Usted no es usuario Administrador');
+            return redirect('/usuarios');
+        }
+
+
     }
 
     /**
@@ -98,9 +113,16 @@ class usuariosController extends Controller
      */
     public function destroy($id)
     {
-        $usuarios = User::find($id);
-        $usuarios->delete();
-        Session::flash('message','Usuario Eliminado Correctamente');
-        return Redirect::to('/usuarios');
+        if (Auth::user()->rol == 'admin'){
+            $usuarios = User::find($id);
+            $usuarios->delete();
+            Session::flash('message','Usuario Eliminado Correctamente');
+            return Redirect::to('/usuarios');
+        }
+        else {
+            Session::flash('message','Usted no es usuario Administrador');
+            return redirect('/usuarios');
+        }
+
     }
 }

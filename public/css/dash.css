@@ -10,9 +10,30 @@
 /*
  * Typography
  */
+<<<<<<< HEAD
 .headerlogin{
   background-color:#302F4A;
   color: #ffff;
+=======
+
+.menu_izq_blade{
+  background-color:#20326a;
+  border-radius: 5px;
+  
+}
+.menu_izq_blade a{
+  color:#fff;
+}
+.cuerpo{
+  background-color:#20326A;
+}
+.cuerpo_logo{
+background-color: #CFE6EE;
+}
+
+a{
+  color: #fff;
+>>>>>>> 19bdd088f45cce24e87db281fc9ecdc7d0eed8ba
 }
 h1 {
   margin-bottom: 20px;

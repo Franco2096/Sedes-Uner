@@ -14,10 +14,10 @@
     {!! Html::style('css/app.css') !!}
 
 </head>
-<body>
+<body class="cuerpo_logo">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container-fluid cuerpo">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -43,7 +43,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @if (Auth::guest())
+                        @if (Auth::guest()) <!--Se comento este login y registro del app-blade del login-->
                             <li><a href="{{ route('login') }}">Iniciar sesión</a></li>
                             <li><a href="{{ route('register') }}">Registrarse</a></li>
                         @else
@@ -52,7 +52,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu cuerpo" role="menu">
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

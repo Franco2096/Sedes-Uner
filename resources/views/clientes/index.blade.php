@@ -1,5 +1,10 @@
 @extends('layouts.appMenu')
 
+
+
+
+
+
 @section('Abajobarra')
 		@if(Session::has('message'))
 			<div class="alert alert-success alert-dismissible" role="alert">
@@ -8,7 +13,6 @@
 		 </div>
 		@endif
 @endsection
-
 @section('tabla')
 	<style >
 		.nuevo{

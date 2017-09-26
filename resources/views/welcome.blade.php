@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #302F4A;
+                background-color: #20326A;
                 color: white;
                 font-family: 'Open Sans', Arial, sans-serif;
                 font-size: 14px;
@@ -49,11 +49,23 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #FDFBFB;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+           
+            .topmenu>a{
+                display: inline-block;
+                background-color:#5674C4; 
+                border-radius: 5px;
+                color: #FDFBFB;
+                padding: 10px;
+                font-size: 12px;
+                font-weight: 600;
                 text-decoration: none;
                 text-transform: uppercase;
             }
@@ -66,12 +78,12 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right topmenu">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Pagina principal</a>
-                    @else
-                        <a href="{{ url('/login') }}">Iniciar sesión</a>
-                        <a href="{{ url('/register') }}" >Registrarse</a>
+                    @else                       
+                        <a class="botones_welcome" href="{{ url('/login') }}">Iniciar sesión</a>
+                        <!--a href="{{ url('/register') }}" >Registrarse</a> --> 
                     @endif
                 </div>
             @endif
