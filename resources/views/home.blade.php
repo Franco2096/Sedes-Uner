@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">USER - Dashboard</div>
+                <div class="panel-heading">Bienvenido a la página principal del Usuario</div>
 
                 <div class="panel-body">
                     Usted esta conectado como: <strong>USER</strong>
