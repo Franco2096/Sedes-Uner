@@ -18,19 +18,20 @@
   <a href="/solicitud/create" class="btn btn-success nuevo" >Nuevo</a>
 	<table class="table">
 		<thead>
-			<th>Titulo</th>
-			<th>Descripcion</th>
+
+			<th>Tipo de servicio</th>
 			<th>Cliente Solicitante</th>
-			<th>Usuario</th>
+			<th>Fecha</th>
+			<th>Estado</th>
 			<th colspan="2"><center>Acciones</center></th>
 			<th></th>
 		</thead>
 		@foreach($solicitudes as $solicitud)
 		<tbody>
-			<td>{{ $solicitud->titulo }}</td>
-			<td>{{ $solicitud->descripcion }}</td>
+			<td>{{ $solicitud->tipo_servicio }}</td>
 			<td>{{ $solicitud->nombre }}</td>
-			<td>{{ $solicitud->name }}</td>
+			<td>{{ $solicitud->fecha }}</td>
+			<td>{{ $solicitud->estado }}</td>
 			<td>{!! link_to_route('solicitud.edit', $title = 'Editar', $parameters = $solicitud->id, $attributes = ['class' =>'btn btn-primary' ]) !!}</td>
 			<td>{!! Form::open(['route' =>['solicitud.destroy', $solicitud->id], 'method' => 'DELETE']) !!}
 					{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
@@ -45,4 +46,4 @@
 
 	{!! $solicitudes->render() !!}
 
-@stop
+@stop --}}

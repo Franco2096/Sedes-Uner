@@ -19,7 +19,7 @@ class CreateSolicitudesTable extends Migration
 
 
             $table->string('tipo_servicio');
-            $table->enum('estado', ['En espera', 'Atendida']);
+            $table->enum('estado', ['En_espera', 'Atendida']);
             $table->datetime('fecha');
 
 
