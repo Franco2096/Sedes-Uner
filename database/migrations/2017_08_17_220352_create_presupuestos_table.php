@@ -15,18 +15,16 @@ class CreatePresupuestosTable extends Migration
     {
         Schema::create('presupuestos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descripcion')->nullable();
+
             $table->enum('estado', ['En_Espera','Aprobado_por_Cliente','Rechazado']);
 
-            $table->datetime('fecha_emision');
-            $table->timestamps();
+            $table->datetime('fecha');
 
             $table->integer('solicitud_id')->unsigned();
             $table->foreign('solicitud_id')->references('id')->on('solicitudes');
 
+            $table->timestamps();
 
-            $table->integer('usuario_id')->unsigned();
-            $table->foreign('usuario_id')->references('id')->on('users');
         });
     }
 
