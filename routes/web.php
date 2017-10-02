@@ -1,6 +1,6 @@
 <?php
 
-
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 
 Route::get('/', function () {
     return view('welcome');
