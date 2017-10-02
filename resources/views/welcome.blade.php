@@ -13,11 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-<<<<<<< HEAD
                 background-color: #20326A;
-=======
                 background-color: #1c4468;
->>>>>>> b72c381b60d16b76387ea1f2bd0b929fa3562eba
                 color: white;
                 font-family: 'Open Sans', Arial, sans-serif;
                 font-size: 14px;
@@ -61,17 +58,18 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-<<<<<<< HEAD
+
 
             .topmenu>a{
                 display: inline-block;
                 background-color:#5674C4;
-=======
+            }
+
            
             .topmenu>a{
                 display: inline-block;
                 background-color:#5674C4; 
->>>>>>> b72c381b60d16b76387ea1f2bd0b929fa3562eba
+
                 border-radius: 5px;
                 color: #FDFBFB;
                 padding: 10px;
@@ -80,14 +78,11 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-<<<<<<< HEAD
-
-=======
+            
             .footer{
               position: bottom;
               background-color:#CFE6EE;
             }
->>>>>>> b72c381b60d16b76387ea1f2bd0b929fa3562eba
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -99,15 +94,9 @@
                 <div class="top-right topmenu">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Pagina principal</a>
-<<<<<<< HEAD
                     @else
                         <a class="botones_welcome" href="{{ url('/login') }}">Iniciar sesión</a>
                         <!--a href="{{ url('/register') }}" >Registrarse</a> -->
-=======
-                    @else                       
-                        <a class="botones_welcome" href="{{ url('/login') }}">Iniciar sesión</a>
-                        <!--a href="{{ url('/register') }}" >Registrarse</a> --> 
->>>>>>> b72c381b60d16b76387ea1f2bd0b929fa3562eba
                     @endif
                 </div>
             @endif
