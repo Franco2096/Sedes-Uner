@@ -7,7 +7,7 @@
             <ul class="nav nav-pills flex-column">
 
 
-        
+
 
                 @if (Auth::user()->rol == 'admin')
 
@@ -15,7 +15,7 @@
                         <a class="nav-link" href="{!! URL::to('/usuarios') !!}">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
+                        <a class="nav-link" href="{!! URL::to('/determinaciones') !!}">Determinaciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
@@ -34,7 +34,7 @@
                 @else
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
+                        <a class="nav-link" href="{!! URL::to('/determinaciones') !!}">Determinaciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
