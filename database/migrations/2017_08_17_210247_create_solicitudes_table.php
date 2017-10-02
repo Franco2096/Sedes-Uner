@@ -17,16 +17,16 @@ class CreateSolicitudesTable extends Migration
             $table->increments('id');
 
 
-            $table->string('titulo');
-            $table->string('descripcion');
+
+            $table->string('tipo_servicio');
             $table->enum('estado', ['En espera', 'Atendida']);
             $table->datetime('fecha');
-            $table->timestamps();
+
 
             $table->integer('cliente_id')->unsigned();
             $table->foreign('cliente_id')->references('id')->on('clientes');
-            $table->integer('usuario_id')->unsigned();
-            $table->foreign('usuario_id')->references('id')->on('users');
+
+            $table->timestamps();
         });
     }
 

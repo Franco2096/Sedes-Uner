@@ -17,9 +17,15 @@ class usuariosController extends Controller
      */
     public function index()
     {
-
+      if (Auth::user()->rol == 'admin'){
         $usuarios = User::paginate(10);
-        return view('users.index',compact('usuarios'));
+        return view('users.index',compact('usuarios'));}
+
+        else{
+        Session::flash('message', 'Usted no tiene acceso a esta parte del sistema');
+        return Redirect::to('/home');
+       
+        }
     }
 
     /**
