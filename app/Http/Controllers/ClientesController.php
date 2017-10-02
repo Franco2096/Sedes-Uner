@@ -28,7 +28,7 @@ class ClientesController extends Controller
     public function store(Request $request)
     { 
 
-        if (empty(trim($request['nombre']))|| empty(trim($request['dni']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email']))){
+        if (empty(trim($request['nombre']))||empty(trim($request['apellido']))|| empty(trim($request['dni']))||empty(trim($request['pais']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email']))||empty(trim($request['empresa']))||empty(trim($request['estado']))){
 
              Session::flash('message','El cliente no fue creado porque no se completaron correctamente los campos');
              return redirect('/clientes');
@@ -38,12 +38,15 @@ class ClientesController extends Controller
         Clientes::create([
 
             'nombre' => $request['nombre'],
-
-            'dni' => $request['dni'],
+            'apellido'=> $request['apellido'],
+            'dni' => $request['dni'], 
+            'pais'=> $request['pais'],
             'provincia' => $request['provincia'],
             'ciudad' => $request['ciudad'],
 			'direccion' => $request['direccion'],
 			'email' => $request['email'],
+            'empresa'=> $request['empresa'],
+            'estado' => $request['estado']
             ]);
 
        
@@ -63,7 +66,7 @@ class ClientesController extends Controller
 
     public function update(Request $request, $id)
     {
-        if (empty(trim($request['nombre']))|| empty(trim($request['dni']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email']))){
+        if (empty(trim($request['nombre']))||empty(trim($request['apellido']))|| empty(trim($request['dni']))||empty(trim($request['pais']))|| empty(trim($request['provincia']))|| empty(trim($request['ciudad']))|| empty(trim($request['direccion']))|| empty(trim($request['email']))||empty(trim($request['empresa']))||empty(trim($request['estado']))){
 
              Session::flash('message','El cliente no fue editado porque no se completaron correctamente los campos');
              return redirect('/clientes');
