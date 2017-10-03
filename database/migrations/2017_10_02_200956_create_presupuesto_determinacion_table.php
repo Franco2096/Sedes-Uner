@@ -13,8 +13,15 @@ class CreatePresupuestoDeterminacionTable extends Migration
      */
     public function up()
     {
-        Schema::create('presu_deter', function (Blueprint $table) {
+        Schema::create('presupuesto_determinacion', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->double('valorDeterminacion', 8, 2);
+            $table->double('valorServicio', 8, 2);
+            $table->double('valorPersonal', 8, 2);
+
+            $table->integer('cantidad');
+
 
             $table->integer('presupuesto_id')->unsigned();
             $table->foreign('presupuesto_id')->references('id')->on('presupuestos');
@@ -22,7 +29,7 @@ class CreatePresupuestoDeterminacionTable extends Migration
             $table->integer('determinacion_id')->unsigned();
             $table->foreign('determinacion_id')->references('id')->on('determinaciones');
 
-            
+
 
 
 

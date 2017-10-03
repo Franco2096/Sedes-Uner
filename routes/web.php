@@ -27,6 +27,7 @@ Auth::routes();
  Route::resource('muestras', 'muestraController');
  Route::resource('solicitud', 'solicitudController');
  Route::resource('presupuestos', 'presupuestoController');
+ 
 
  Route::resource('clientes','clientesController');
 

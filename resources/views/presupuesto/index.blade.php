@@ -20,25 +20,36 @@
 	<table class="table">
 		<thead>
 
-			<th>Descripcion</th>
+			<th>Tipo_servicio</th>
+			<th>Fecha de presupuesto</th>
+			<th>Fecha de solicitud</th>
+			<th>Cliente</th>
 			<th>Estado</th>
-			<th>Fecha de emision</th>
-			<th>Solicitud Asociada</th>
-			<th>Usuario asociado</th>
+			<th>Total</th>
 			<th>Operaciones</th>
 			<th></th>
 		</thead>
 		@foreach($presupuestos as $presupuesto)
 		<tbody>
-			<td>{{ $presupuesto->descripcion }}</td>
-			<td>{{ $presupuesto->estado }}</td>
-			<td>{{ $presupuesto->fecha_emision }}</td>
-			<td>{{ $presupuesto->titulo }}</td>
-			<td>{{ $presupuesto->name }}</td>
+			<td>{{ $presupuesto->tipo_servicio }}</td>
+			<td>{{ $presupuesto->fecha_presupuesto }}</td>
+			<td>{{ $presupuesto->fecha_solicitud }}</td>
+			<td>{{ $presupuesto->nombreCliente }}</td>
+			@if ($presupuesto->estado == 'En_Espera')
+			<td> En espera </td>
+			@elseif ($presupuesto->estado == 'Aprobado_por_Cliente')
+				<td> Aprobado por el cliente </td>
+			@else
+				<td> Rechazado </td>
+			@endif
 
 
 
-			<td>{!! link_to_route('presupuestos.edit', $title = 'Editar', $parameters = $presupuesto->id, $attributes = ['class' =>'btn btn-primary' ]) !!}</td>
+			<td>{{ $presupuesto->totalPresupuesto }}</td>
+
+
+
+			<td>{!! link_to_route('presupuestos.show', $title = 'Ver', $parameters = $presupuesto->id, $attributes = ['class' =>'btn btn-success' ]) !!}</td>
 			<td>{!! Form::open(['route' =>['presupuestos.destroy', $presupuesto->id], 'method' => 'DELETE']) !!}
 					{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
 					{!! Form::close() !!}
