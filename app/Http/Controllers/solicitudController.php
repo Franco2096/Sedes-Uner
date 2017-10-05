@@ -53,6 +53,7 @@ class solicitudController extends Controller
     public function store(Request $request)
     {
         Solicitud::create([
+            'titulo' => $request['titulo'],
             'tipo_servicio' => $request['tipo_servicio'],
             'cliente_id' => $request['cliente_id'],
             'fecha' => $request['fecha'],

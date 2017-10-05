@@ -8,8 +8,12 @@
 			{!! Form::model($solicitud,['route' =>['solicitud.update', $solicitud->id], 'method' => 'PUT']) !!}
 
 			<div class="form-group">
+				{!! Form::label('Título: ') !!}
+				{!! Form::text('titulo',null,['class' => 'form-control','placeholder'=> 'Ingresa servicios']) !!}
+			</div>
+			<div class="form-group">
 				{!! Form::label('Tipo de servicio: ') !!}
-				{!! Form::text('tipo_servicio',null,['class' => 'form-control','placeholder'=> 'Ingresa servicios']) !!}
+				{!! Form::textarea('tipo_servicio',null,['class' => 'form-control','placeholder'=> 'Ingresa servicios']) !!}
 			</div>
 
 
@@ -21,7 +25,7 @@
 
 			<div class="form-group">
 				{!! Form::label('Fecha: ') !!}
-				{!! Form::date('fecha', \Carbon\Carbon::now()) !!}
+				{!! Form::datetime('fecha', \Carbon\Carbon::now()) !!}
 			</div>
 
 		<div class="col-md-6">

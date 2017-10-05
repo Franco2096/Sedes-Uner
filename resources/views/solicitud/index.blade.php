@@ -18,7 +18,7 @@
   <a href="/solicitud/create" class="btn btn-success nuevo" >Nuevo</a>
 	<table class="table">
 		<thead>
-
+			<th>Título</th>
 			<th>Tipo de servicio</th>
 			<th>Cliente Solicitante</th>
 			<th>Fecha</th>
@@ -28,7 +28,8 @@
 		</thead>
 		@foreach($solicitudes as $solicitud)
 		<tbody>
-			<td>{{ $solicitud->tipo_servicio }}</td>
+			<td>{{ $solicitud->titulo }}</td>
+			<td>{{ str_limit($solicitud->tipo_servicio, 130, ' (...)')}}</td>
 			<td>{{ $solicitud->nombre }}</td>
 			<td>{{ $solicitud->fecha }}</td>
 			<td>{{ $solicitud->estado }}</td>

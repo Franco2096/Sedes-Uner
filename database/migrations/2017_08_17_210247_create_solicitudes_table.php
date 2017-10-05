@@ -16,9 +16,8 @@ class CreateSolicitudesTable extends Migration
         Schema::create('solicitudes', function (Blueprint $table) {
             $table->increments('id');
 
-
-
-            $table->string('tipo_servicio');
+            $table->string('titulo');
+            $table->mediumText('tipo_servicio');
             $table->enum('estado', ['En_espera', 'Atendida']);
             $table->datetime('fecha');
 
