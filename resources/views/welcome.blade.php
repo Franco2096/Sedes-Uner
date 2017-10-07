@@ -81,11 +81,11 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right topmenu">
+                <div class="top-right topmenu Boton-3DLateralD">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Pagina principal</a>
                     @else                       
-                        <a class="botones_welcome" href="{{ url('/login') }}">Iniciar sesión</a>
+                        <a href="{{ url('/login') }}">Iniciar sesión</a>
                         <!--a href="{{ url('/register') }}" >Registrarse</a> --> 
                     @endif
                 </div>
