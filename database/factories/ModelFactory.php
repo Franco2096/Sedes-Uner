@@ -45,5 +45,18 @@ $factory->define(App\Admin::class, function (Faker\Generator $faker) {
         'password' => $password ?: $password = bcrypt('123456'),
         'remember_token' => str_random(10),
     ];
-
 });
+  $factory->define(App\Determinaciones::class, function (Faker\Generator $faker) {  
+ return [    
+             //'determinacion' =>"Acidez total" ,
+            //'tecnica' => "Tritrimétrico",
+            // 'estado' => "habilitado",
+//'tipo' => "fisico_quimico",
+             
+         
+
+                ];
+        
+        }
+    
+);
