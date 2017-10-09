@@ -19,19 +19,49 @@
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container-fluid cuerpo">
                 <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'UNER') }}
                     </a>
+                    <ul class="row nav nav-pills flex-column">
+                    @if (Auth::user()->rol == 'admin')
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/usuarios') !!}">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/solicitud') !!}">Solicitud</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/presupuestos') !!}">Presupuestos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/muestras') !!}">Muestras</a>
+                    </li> 
+
+                @else
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/solicitud') !!}">Solicitud</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{!! URL::to('/presupuestos') !!}">Presupuestos</a>
+                    </li>
+
+                @endif
+                </ul>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
