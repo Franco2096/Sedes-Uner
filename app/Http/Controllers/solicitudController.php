@@ -20,10 +20,10 @@ class solicitudController extends Controller
      */
     public function index()
     {
+
         $solicitudes = DB::table('solicitudes')
             ->join('clientes', 'clientes.id', '=', 'solicitudes.cliente_id')
-            ->join('users', 'users.id', '=', 'solicitudes.usuario_id')
-            ->select('solicitudes.*', 'clientes.nombre', 'users.name')
+            ->select('solicitudes.*', 'clientes.nombre')
             ->paginate(10);
 
         //$solicitudes = Solicitud::paginate(10);
@@ -41,7 +41,7 @@ class solicitudController extends Controller
 
           return view('solicitud.create',['cliente'=> $cliente]);
          //return view('solicitud.create');
-         
+
     }
 
     /**
@@ -54,13 +54,10 @@ class solicitudController extends Controller
     {
         Solicitud::create([
             'titulo' => $request['titulo'],
-            'descripcion' => $request['descripcion'],
-            'estado' => $request['tipoEstado'],
-            'fecha' => date('Y-m-d'),
+            'tipo_servicio' => $request['tipo_servicio'],
             'cliente_id' => $request['cliente_id'],
-            'usuario_id' => Auth::user()->id,
-
-
+            'fecha' => $request['fecha'],
+            'estado' => 'En_espera',
             ]);
         Session::flash('message','Solicitud Creada Correctamente');
         return redirect('/solicitud');
@@ -88,6 +85,13 @@ class solicitudController extends Controller
         $cliente = Clientes::all()->pluck('nombre','id');
 
         $solicitud = Solicitud::find($id);
+
+        // //   \Carbon\Carbon::parse($solicitud->fecha)->format('Y/m/d');
+        // $xx = \Carbon\Carbon::createFromFormat('d/m/Y', '11/06/1990');
+        // $fecha=['fecha1'=> $xx];
+
+        //  dd($fecha);
+        //dd($solicitud);
         /*$old = DB::table('solicitudes')
             ->join('clientes', 'clientes.id', '=', 'solicitudes.cliente_id')
             ->select('clientes.id as pepin','nombre')
@@ -95,7 +99,8 @@ class solicitudController extends Controller
             ->get();*/
 
        // $idcli = $solicitud[0]->cliente_id;
-        return view('solicitud.edit',['solicitud'=>$solicitud],['cliente'=> $cliente]);
+       return view('solicitud.edit', compact('solicitud','cliente'));
+        // return view('solicitud.edit',['solicitud'=>$solicitud],['cliente'=> $cliente],['fecha'=> $fecha]);
     }
 
     /**
@@ -108,14 +113,13 @@ class solicitudController extends Controller
     public function update(Request $request, $id)
     {
 
-        
         $solicitud = Solicitud::find($id);
         $solicitud->fill($request->all());
-        $solicitud->titulo = $request->titulo;
-        $solicitud->descripcion = $request->descripcion;
-        $solicitud->cliente_id = $request->cliente_id;
-        $solicitud->usuario_id = Auth::user()->id;
-         
+        // $solicitud->tipo_servicio = $request->tipo_servicio;
+        // $solicitud->cliente_id = $request->cliente_id;
+        // $solicitud->fecha = $request->fecha;
+        // $solicitud->estado = $request->estado;
+
 
         $solicitud->save();
         Session::flash('message','Solicitud Editada Correctamente');
@@ -135,5 +139,5 @@ class solicitudController extends Controller
       Session::flash('message','Solicitud Eliminada Correctamente');
       return Redirect::to('/solicitud');
     }
-    
+
 }

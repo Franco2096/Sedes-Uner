@@ -1,4 +1,4 @@
-		<div class="form-group"  
+		<div class="form-group">  
 			{!! Form::label('Nombre: ') !!}
 			{!! Form::text('nombre',null,['class' => 'form-control','placeholder', 'required pattnern="[A-Za-z0-9]{5,40}'=> 'Ingresa nombre de la muestra']) !!}
 		</div>

@@ -16,7 +16,7 @@ class CreateDeterminacionesTable extends Migration
         Schema::create('determinaciones', function (Blueprint $table) {
             $table->increments('id');
             $table->string('determinacion');
-            $table->string('tecnica');
+            $table->mediumText('tecnica');
             $table->enum('tipo', ['microbiologico','fisico_quimico','tecnicas_especiales']);
             $table->enum('estado', ['habilitado','deshabilitado']);
             $table->timestamps();

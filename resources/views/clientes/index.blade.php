@@ -23,20 +23,29 @@
 	<table class="table">
 		<thead>
 			<th>Nombre</th>
+			<th>Apellido</th>
 			<th>Dni</th>
+			<th>Pais</th>
 			<th>Provincia</th>
 			<th>ciudad</th>
 			<th>Direccion</th>
 			<th>Email</th>
+			<th>Empresa</th>
+			<th>Estado</th>
 		</thead>
 		@foreach($clientes as $cliente)
 		<tbody>
 			<td>{{ $cliente->nombre }}</td>
+            <td>{{ $cliente->apellido }}</td>
 			<td>{{ $cliente->dni }}</td>
+			<td>{{ $cliente->pais }}</td>
 			<td>{{ $cliente->provincia }}</td>
 			<td>{{ $cliente->ciudad }}</td>
 			<td>{{ $cliente->direccion }}</td>
 			<td>{{ $cliente->email }}</td>
+			<td>{{ $cliente->empresa }}</td>
+			<td>{{ $cliente->estado }}</td>
+
 
 
 

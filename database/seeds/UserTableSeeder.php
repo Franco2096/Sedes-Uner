@@ -11,7 +11,14 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-      factory(App\User::class, 10)->create();
+      DB::table('users')->insert([
+            'name' =>"Administrador" ,
+            'email' => "admin@admin.com",
+            'password' => bcrypt('123456'),
+        	'tipoUser' => "Fisico_Quimico",
+            'rol' => "admin"
+
+        ]);
 
     }
 }
