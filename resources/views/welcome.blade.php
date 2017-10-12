@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #20326A;
+                background-color: #1c4468;
                 color: white;
                 font-family: 'Open Sans', Arial, sans-serif;
                 font-size: 14px;

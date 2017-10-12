@@ -13,10 +13,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">ADMIN - Dashboard</div>
+                <div class="panel-heading">Panel de Administrador</div>
 
                 <div class="panel-body">
-                    Usted esta conectado como: <strong>Admin</strong>
+                    Usted esta conectado como: <strong>Administrador</strong>
                 </div>
             </div>
         </div>

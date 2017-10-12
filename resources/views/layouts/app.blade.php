@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html lang="{{config('app.locale')}}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,6 +32,7 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'UNER') }}
                     </a>
+                    @yield('content')
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -72,9 +73,10 @@
             </div>
         </nav>
         @yield('Abajobarra')
-
-
-        @yield('content')
+        
+        <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+                @yield('tabla')
+        </main>
 
 
 

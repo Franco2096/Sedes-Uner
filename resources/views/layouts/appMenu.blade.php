@@ -3,7 +3,7 @@
 @section('content')
   <div class="container-fluid">
         <div class="row">
-          <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar menu_izq_blade">
+          <!--<nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar menu_izq_blade"> -->
             <ul class="nav nav-pills flex-column">
 
 
@@ -60,11 +60,11 @@
 
 
 
-          </nav>
+          <!--</nav>-->
 
-          <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+          <!--<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
                 @yield('tabla')
-          </main>
+          </main>-->
       </div>
 </div>
 
