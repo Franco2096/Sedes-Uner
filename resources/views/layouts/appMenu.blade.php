@@ -6,7 +6,7 @@
             <ul class="nav nav-pills flex-column">
                 @if (Auth::user()->rol == 'admin')
 
-                    <!--<li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/usuarios') !!}">Usuarios</a>
                     </li>
                     <li class="nav-item">
@@ -24,11 +24,10 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/muestras') !!}">Muestras</a>
-                    </li> -->
-
+                    </li>
                 @else
 
-                     <!--<li class="nav-item">
+                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
                     </li>
                     <li class="nav-item">
@@ -51,7 +50,7 @@
                         <a class="nav-link"   href="{!! URL::to('/usuarios') !!}">Reportes</a>
                 </li>
 
-            </ul>-->
+            </ul>
 
           <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
                 @yield('tabla')

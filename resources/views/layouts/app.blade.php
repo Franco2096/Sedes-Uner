@@ -22,46 +22,7 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'UNER') }}
                     </a>
-                    <ul class="row nav nav-pills flex-column">
-                    @if (Auth::user()->rol == 'admin')
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/usuarios') !!}">Usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/solicitud') !!}">Solicitud</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/presupuestos') !!}">Presupuestos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/muestras') !!}">Muestras</a>
-                    </li> 
-
-                @else
-
-                     <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/solicitud') !!}">Solicitud</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/presupuestos') !!}">Presupuestos</a>
-                    </li>
-
-                @endif
-                </ul>
+                    @yield('content')
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -104,7 +65,7 @@
         @yield('Abajobarra')
 
 
-        @yield('content')
+        
 
 
 
