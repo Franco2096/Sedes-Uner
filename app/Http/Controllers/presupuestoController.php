@@ -20,8 +20,8 @@ class presupuestoController extends Controller
     {
          $presupuestos = DB::table('presupuestos')
             ->join('solicitudes', 'solicitudes.id', '=', 'presupuestos.solicitud_id')
-            ->join('users', 'users.id', '=', 'presupuestos.usuario_id')
-            ->select('presupuestos.*', 'solicitudes.titulo', 'users.name')
+            ->join('clientes', 'clientes.id', '=', 'solicitudes.cliente_id')
+            ->select('presupuestos.id','presupuestos.fecha as fecha_presupuesto','presupuestos.TotalPresupuestado as totalPresupuesto','presupuestos.estado as estado', 'solicitudes.tipo_servicio as tipo_servicio','solicitudes.fecha  as fecha_solicitud','clientes.nombre  as nombreCliente' )
             ->paginate(10);
       return view('presupuesto.index',compact('presupuestos'));
     }
@@ -86,7 +86,7 @@ class presupuestoController extends Controller
 
      //$solicitud = Solicitud::all()->pluck('titulo', 'id');
        return view('presupuesto.edit',compact('presupuestos','usuario','solicitud'));
-      
+
     }
 
     /**

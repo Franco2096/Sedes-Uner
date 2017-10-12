@@ -16,17 +16,16 @@ class CreateSolicitudesTable extends Migration
         Schema::create('solicitudes', function (Blueprint $table) {
             $table->increments('id');
 
-
             $table->string('titulo');
-            $table->string('descripcion');
-            $table->enum('estado', ['En espera', 'Atendida']);
+            $table->mediumText('tipo_servicio');
+            $table->enum('estado', ['En_espera', 'Atendida']);
             $table->datetime('fecha');
-            $table->timestamps();
+
 
             $table->integer('cliente_id')->unsigned();
             $table->foreign('cliente_id')->references('id')->on('clientes');
-            $table->integer('usuario_id')->unsigned();
-            $table->foreign('usuario_id')->references('id')->on('users');
+
+            $table->timestamps();
         });
     }
 
