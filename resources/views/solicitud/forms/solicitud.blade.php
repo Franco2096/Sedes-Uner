@@ -1,5 +1,3 @@
-
-
 <div class="form-group">
 	{!! Form::label('Título de la solicitud: ') !!}
 	{!! Form::text('titulo',null,['class' => 'form-control','placeholder'=> 'Ingresar Título']) !!}

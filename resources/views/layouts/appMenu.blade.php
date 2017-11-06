@@ -4,13 +4,6 @@
   <div class="container-fluid">
         <div class="row">
             <ul class="nav nav-pills flex-column">
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> master
                 @if (Auth::user()->rol == 'admin')
 
                     <li class="nav-item">
@@ -34,13 +27,13 @@
                     </li>
                 @else
 
-<<<<<<< HEAD
+
                      <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
-=======
+
                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/determinaciones') !!}">Determinaciones</a>
->>>>>>> master
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
@@ -64,18 +57,18 @@
 
             </ul>
 
-          <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
-                @yield('tabla')
-          </main>
+          <!--<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+               {{-- @yield('tabla') --}}
+          </main> -->
       </div>
 </div>
 
 
 
 
-       {{-- <div class="container">
-          @yield('tabla')
-       </div> --}}
+        <!--<div class="container">
+          {{--@yield('tabla')--}}
+       </div>-->
 
 
 

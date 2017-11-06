@@ -47,4 +47,4 @@
 
 	{!! $solicitudes->render() !!}
 
-@stop --}}
+@stop

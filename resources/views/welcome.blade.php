@@ -60,14 +60,15 @@
            
             .topmenu>a{
                 display: inline-block;
-                background-color:#5674C4; 
+                background-color:#3a6999; 
                 border-radius: 5px;
-                color: #FDFBFB;
+                color:#f4f4f7;
                 padding: 10px;
                 font-size: 12px;
                 font-weight: 600;
                 text-decoration: none;
                 text-transform: uppercase;
+
             }
             .footer{
               position: bottom;
@@ -81,7 +82,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right topmenu Boton-3DLateralD">
+                <div class="top-right topmenu">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Pagina principal</a>
                     @else                       

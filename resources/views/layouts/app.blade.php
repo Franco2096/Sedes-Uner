@@ -63,6 +63,9 @@
             </div>
         </nav>
         @yield('Abajobarra')
+        <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+                @yield('tabla')
+        </main>
 
 
         
