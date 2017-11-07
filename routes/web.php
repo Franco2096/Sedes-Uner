@@ -26,8 +26,9 @@ Auth::routes();
  Route::resource('analisis','analisisController');
  Route::resource('muestras', 'muestraController');
  Route::resource('solicitud', 'solicitudController');
- Route::resource('presupuestos', 'presupuestoController');
- 
+ Route::resource('presupuestos', 'presupuestoController', ['only' => ['index','store','edit','update','destroy']]);
+ Route::post('/presu', 'presupuestoController@store')->name('presu');
+
 
  Route::resource('clientes','clientesController');
 

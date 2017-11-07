@@ -21,7 +21,7 @@
 			{!! Form::select('cliente_id', $cliente, $solicitud->cliente_id,['class' => 'form-control m-bot15']) !!}
 			</div>
 
-			
+
 
 			<div class="form-group">
 				{!! Form::label('Fecha: ') !!}

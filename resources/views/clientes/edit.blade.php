@@ -9,7 +9,7 @@
 @endif
 @section('tabla')
 @include('alerts.request')
-				
+
 		<div class="col-md-6">
 			{!! Form::model($clientes,['route' =>['clientes.update', $clientes->id], 'method' => 'PUT']) !!}
 			@include('clientes.forms.cliente')

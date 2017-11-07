@@ -2,11 +2,11 @@
 
 @section('tabla')
 	@include('alerts.request')
-	@include('presupuesto.forms.presupuesto')
-	{{-- {!! Form::open(['route' => 'presupuestos.store', 'method'=> 'POST']) !!}
+	{!! Form::open(['route' => 'presupuestos.store', 'method'=> 'POST']) !!}
+		@include('presupuesto.forms.presupuesto_create')
+	{!! Form::close() !!}
 
-		{!! Form::submit('Registrar',['class' => 'btn btn-primary']) !!}
-	{!! Form::close() !!} --}}
 
 
 @stop
+	

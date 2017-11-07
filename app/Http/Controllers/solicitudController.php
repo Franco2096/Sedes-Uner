@@ -23,7 +23,7 @@ class solicitudController extends Controller
 
         $solicitudes = DB::table('solicitudes')
             ->join('clientes', 'clientes.id', '=', 'solicitudes.cliente_id')
-            ->select('solicitudes.*', 'clientes.nombre')
+            ->select('solicitudes.*', 'clientes.nombre as nombreCliente','clientes.apellido as apellidoCliente')
             ->paginate(10);
 
         //$solicitudes = Solicitud::paginate(10);
