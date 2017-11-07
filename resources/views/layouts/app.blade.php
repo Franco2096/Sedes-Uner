@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name', 'UNER') }}</title>
     {!! Html::style('css/dash.css') !!}
-
+    {!! Html::style('css/bootstrap.css') !!}
     {!! Html::style('css/app.css') !!}
 
 </head>
@@ -19,10 +19,19 @@
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container-fluid cuerpo">
                 <div class="navbar-header">
+
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'UNER') }}
                     </a>
-                    @yield('content')
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -63,12 +72,9 @@
             </div>
         </nav>
         @yield('Abajobarra')
-        <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
-                @yield('tabla')
-        </main>
 
 
-        
+        @yield('content')
 
 
 
@@ -76,7 +82,7 @@
 
 
     {!! Html::script('js/jquery.min.js') !!}
-    {!! Html::script('js/list.min.js') !!}
+
     {!! Html::script('js/bootstrap.min.js') !!}
 
 

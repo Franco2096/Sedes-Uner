@@ -38,6 +38,7 @@
 					<td><center>{{ date('d, m, Y', strtotime($solicitud->fecha)) }}</center></td>
 					<td>{{ $solicitud->estado }}</td>
 					<td>{!! link_to_route('solicitud.edit', $title = 'Editar', $parameters = $solicitud->id, $attributes = ['class' =>'btn btn-primary btn-xs' ]) !!}</td>
+					<td align='right'><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">Ver</button></td>
 					<td>{!! Form::open(['route' =>['solicitud.destroy', $solicitud->id], 'method' => 'DELETE']) !!}
 							{!! Form::submit('Eliminar',['class' => 'btn btn-danger btn-xs']) !!}
 							{!! Form::close() !!}

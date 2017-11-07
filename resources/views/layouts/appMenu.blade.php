@@ -3,7 +3,12 @@
 @section('content')
   <div class="container-fluid">
         <div class="row">
-            <ul class="nav nav-pills">
+          <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar menu_izq_blade">
+            <ul class="nav nav-pills flex-column">
+
+
+
+
                 @if (Auth::user()->rol == 'admin')
 
                     <li class="nav-item">
@@ -25,18 +30,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/muestras') !!}">Muestras</a>
                     </li>
-                    <li class="nav-item" >
-                        <a class="nav-link"   href="{!! URL::to('/usuarios') !!}">Reportes</a>
-                    </li>
+
                 @else
-
-
-                     <li class="nav-item">
-                        <a class="nav-link" href="{!! URL::to('/analisis') !!}">Analisis</a>
 
                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/determinaciones') !!}">Determinaciones</a>
-
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/clientes') !!}">Clientes</a>
@@ -47,26 +45,35 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{!! URL::to('/presupuestos') !!}">Presupuestos</a>
                     </li>
-                    <li class="nav-item" >
-                        <a class="nav-link"   href="{!! URL::to('/usuarios') !!}">Reportes</a>
-                    </li>
 
                 @endif
 
+            </ul>
+
+                <ul class="nav nav-pills flex-column ">
+
+                    <li class="nav-item" >
+                        <a class="nav-link"   href="{!! URL::to('/usuarios') !!}">Reportes</a>
+                </li>
 
             </ul>
-          <!--<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
-               {{-- @yield('tabla') --}}
-          </main> -->
+
+
+
+          </nav>
+
+          <main class="row">
+                @yield('tabla')
+          </main>
       </div>
 </div>
 
 
 
 
-        <!--<div class="container">
-          {{--@yield('tabla')--}}
-       </div>-->
+       {{-- <div class="container">
+          @yield('tabla')
+       </div> --}}
 
 
 
