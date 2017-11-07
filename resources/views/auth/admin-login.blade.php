@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('Abajobarra')
 <div class="container">
 <style type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
