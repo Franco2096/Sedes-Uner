@@ -14,10 +14,7 @@
         var ip = [];
         var i = 0;
         //$('#guardar').attr('disabled','disabled'); //Deshabilito el Boton Guardar
-        $('.iProduct').each(function(index, element) {
-            i++;
-            ip.push({ id_pro : $(this).val() });
-        });
+
         // Si la lista de Productos no es vacia Habilito el Boton Guardar
         if (i = 0) {
             // $('#guardar').removeAttr('disabled','disabled');
@@ -65,7 +62,7 @@
             RefrescaProducto();
         });
 
-        $('#pro_id').find('option[value="'+sel+'"]').remove();
+        //$('#pro_id').find('option[value="'+sel+'"]').remove();
 
     }
 

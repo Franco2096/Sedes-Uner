@@ -25,6 +25,7 @@ class presupuestoController extends Controller
             ->join('clientes', 'clientes.id', '=', 'solicitudes.cliente_id')
             ->select('presupuestos.id','presupuestos.fecha as fecha_presupuesto','presupuestos.TotalPresupuestado as totalPresupuesto','presupuestos.estado as estado', 'solicitudes.tipo_servicio as tipo_servicio','solicitudes.fecha  as fecha_solicitud','clientes.nombre as nombreCliente','clientes.apellido as apellidoCliente' )
             ->paginate(10);
+
       return view('presupuesto.index',compact('presupuestos'));
     }
 
@@ -137,7 +138,14 @@ class presupuestoController extends Controller
      */
     public function show($id)
     {
-        //
+        $determinaciones = DB::table('presupuestos')
+        ->join('presupuesto_determinacion', 'presupuesto_determinacion.presupuesto_id', '=', 'presupuestos.id')
+        ->join('determinaciones','determinaciones.id', '=', 'presupuesto_determinacion.determinacion_id')
+        ->select('determinaciones.determinacion','presupuesto_determinacion.valorServicio','presupuesto_determinacion.valorPersonal','presupuesto_determinacion.valorDeterminacion','presupuestos.TotalPresupuestado')
+        ->where('presupuesto_determinacion.presupuesto_id', '=',$id)
+        ->get();
+        
+        return view('presupuesto.show',compact('determinaciones'));
     }
 
     /**

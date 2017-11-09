@@ -38,46 +38,53 @@
 					<td><center>{{ date('d, m, Y', strtotime($solicitud->fecha)) }}</center></td>
 					<td>{{ $solicitud->estado }}</td>
 					<td>{!! link_to_route('solicitud.edit', $title = 'Editar', $parameters = $solicitud->id, $attributes = ['class' =>'btn btn-primary btn-xs' ]) !!}</td>
-					<td align='right'><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">Ver</button></td>
+
+					{{-- {{ $pep = $solicitud }} --}}
+					{{-- <td align='right'><button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">Ver</button></td> --}}
+					<td><button id="agendar" class="btn btn-success btn-xs"	data-target="#myModal" data-toggle="modal" data-id="{{$solicitud->tipo_servicio}}" href="#" class="sepV_a" title="agendar">Ver</button></td>
+
 					<td>{!! Form::open(['route' =>['solicitud.destroy', $solicitud->id], 'method' => 'DELETE']) !!}
 							{!! Form::submit('Eliminar',['class' => 'btn btn-danger btn-xs']) !!}
 							{!! Form::close() !!}
 					</td>
 
 
-
 				</tbody>
 				@endforeach
-			</table>
-			{!! $solicitudes->render() !!}
-		</div>
-	</div>
-	<div class="modal fade" id="myModal" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"><center>Agregar determinación</center></h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<select class="selectpicker form-control" id="pro_id" name="pro_id" data-width='100%' required>
-							<option value="" disabled selected>Seleccionar Determinación</option>
 
-						</select>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<!--Uso la funcion onclick para llamar a la funcion en javascript-->
-					<button type="button" onclick="agregarProducto()" class="btn btn-success btn-sm" data-dismiss="modal">Agregar</button>
-					<button type="button" class="btn btn-danger btn-sm pull-left" data-dismiss="modal">Cerrar</button>
-				</div>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Descripción del Servicio</h4>
+			</div>
+			<div class="modal-body">
+				<textarea class="form-group" name="bookId" id="bookId"  rows="8" cols="80" value="" readonly></textarea>
+			</div>
+			<div class="modal-footer">
+				<!--Uso la funcion onclick para llamar a la funcion en javascript-->
+				<button type="button" class="btn btn-danger btn-xs pull-left" data-dismiss="modal">Cerrar</button>
 			</div>
 
 		</div>
 	</div>
-
-
+</div>
+			</table>
+			{!! $solicitudes->render() !!}
+		</div>
+	</div>
+</div>
 
 @stop
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(e){
+		$('#myModal').on('show.bs.modal', function(e) {
+		   var id = $(e.relatedTarget).data().id;
+			$(e.currentTarget).find('#bookId').val(id);
+		});
+	  });
+</script>
