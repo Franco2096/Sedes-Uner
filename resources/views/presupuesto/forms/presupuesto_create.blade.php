@@ -148,11 +148,11 @@
 
     <div class="container" >
         <form method="POST" action="" name="pepito" id="pepito">
-            <h2><center>Seleccione la solicitud a presupuestar</center></h2>
+            <h2><center>Seleccione la Solicutud a presupuestar</center></h2>
             <div  class="panel-body col-xl-12">
                 <div class="col-xl-6">
                     <select class="selectpicker form-control" style="width:90%;" onchange="document.getElementById('data').value=this.options[this.selectedIndex].getAttribute('fecha')" id="idsolicitud" name="idsolicitud" data-width='100%' required>
-                        <option value="" selected disabled>Selecciona Determinación</option>
+                        <option value="" selected disabled>Seleccione la solicitud</option>
                         @foreach($solicitud as $sol)
                             <option id="holas" fecha="{{$sol->tipo_servicio}}" value="{{$sol->id}}">{{ $sol->titulo }}</option>
 
@@ -164,7 +164,7 @@
                 </div>
                 <div class="col-xl-6">
                     <td align='right'>
-                        <td align='left'><h4>Seleccione la solicitud a presupuestar</h4></td>
+                        <td align='left'><h4>Seleccione la determinación a presupuestar</h4></td>
                         <td align='right'><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Agregar</button></td>
                     </td>
                 </div>
@@ -227,8 +227,8 @@
             <div class="modal-dialog">
 
                 <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
+                <div class="modal-content cuerpo">
+                    <div class="modal-header cuerpo">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title"><center>Agregar determinación</center></h4>
                     </div>

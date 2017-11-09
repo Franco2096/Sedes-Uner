@@ -32,6 +32,7 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'UNER') }}
                     </a>
+                    @yield('content')
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -72,9 +73,9 @@
             </div>
         </nav>
         @yield('Abajobarra')
-
-
-        @yield('content')
+        <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+                @yield('tabla')
+        </main>
 
 
 
