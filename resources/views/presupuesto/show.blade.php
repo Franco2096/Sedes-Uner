@@ -18,30 +18,31 @@
 	</style>
 <div class="panel-content">
 	<div class="panel-heading">
-		 <a href="/presupuestos/create" class="btn btn-success nuevo" >Nuevo</a>
+
+		 <button type="button" class="btn btn-outline btn-info" onclick="history.go(-1); return false;">Volver</button>
 	</div>
     <div >
 		<table class="table table-hover">
 			<thead>
-				<th>Tipo servicio</th>
-				<th>Fecha de presupuesto</th>
-				<th>Fecha de solicitud</th>
-				<th><center>Cliente</center></th>
-				<th>Estado</th>
-				<th>Total</th>
-				<th colspan="2"><center>Operaciones</center></th>
+				<th>Determinación</th>
+				<th>Valor Determinacion</th>
+				<th>Valor Servicio</th>
+				<th>Valor Personal</th>
+				<th>Total Presupuestado</th>
 				<th></th>
 			</thead>
 			@foreach($determinaciones as $deter)
 			<tbody>
 				<td>{{$deter->determinacion}}</td>
 				<td><center>{{ $deter->valorDeterminacion }}</center></td>
-
+				<td><center>{{ $deter->valorServicio }}</center></td>
+				<td><center>{{ $deter->valorPersonal }}</center></td>
+				<td><center>{{ $deter->TotalPresupuestado }}</center></td>
 			</tbody>
 			@endforeach
 		</table>
 		<div><center>
-				{!! $determinaciones->render() !!}
+
 		</center>
 		</div>
     </div>

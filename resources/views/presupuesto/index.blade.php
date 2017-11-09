@@ -29,7 +29,7 @@
 				<th><center>Cliente</center></th>
 				<th>Estado</th>
 				<th>Total</th>
-				<th colspan="2"><center>Operaciones</center></th>
+				<th><center>Operaciones</center></th>
 				<th></th>
 			</thead>
 			@foreach($presupuestos as $presupuesto)
@@ -47,20 +47,9 @@
 					<td> Rechazado </td>
 				@endif
 
-
-
 				<td>{{ $presupuesto->totalPresupuesto }}</td>
 
-
-
 				<td>{!! link_to_route('presupuestos.show', $title = 'Ver detalles', $parameters = $presupuesto->id, $attributes = ['class' =>'btn btn-success btn-xs' ]) !!}</td>
-				<td>{!! Form::open(['route' =>['presupuestos.destroy', $presupuesto->id], 'method' => 'DELETE']) !!}
-						{!! Form::submit('Eliminar',['class' => 'btn btn-danger btn-xs']) !!}
-						{!! Form::close() !!}
-				</td>
-
-
-
 
 			</tbody>
 			@endforeach

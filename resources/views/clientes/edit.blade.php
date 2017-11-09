@@ -10,16 +10,17 @@
 @section('tabla')
 @include('alerts.request')
 
-		<div class="col-md-6">
+		<div class="container">
+			<h1><center>Editar Cliente</center></h1>
 			{!! Form::model($clientes,['route' =>['clientes.update', $clientes->id], 'method' => 'PUT']) !!}
 			@include('clientes.forms.cliente')
-			<div class="col-md-6">
-
+			<div class="pull-left">
 			    <a href="/clientes" class="btn btn-primary">Regresar </a>
+			</div>
+			<div class="pull-right">
 				{!! Form::submit('Actualizar',['class' => 'btn btn-success']) !!}
 			</div>
 			{!! Form::close() !!}
-
 		</div>
 
 @stop

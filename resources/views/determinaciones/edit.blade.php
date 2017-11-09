@@ -3,18 +3,20 @@
 @section('tabla')
 @include('alerts.request')
 
-		<div class="col-md-6">
+	<div class="center-block">
+		<h1><center>Editar Determinación</center></h1>
+		<div align="center">
 			{!! Form::model($determinacion,['route' =>['determinaciones.update', $determinacion->id], 'method' => 'PUT']) !!}
 			@include('determinaciones.forms.determinacion')
+			<div class="pull-center">
+				<a href="/determinaciones" class="btn btn-primary">Atras</a>
 
-		<div class="col-md-6">
-				{!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
+				{!! Form::submit('Actualizar',['class' => 'btn btn-success']) !!}
+			</div>
 		</div>
-		<div class="col-md-6">
-			<a href="/determinaciones" class="btn btn-success">Atras</a>
-		</div>
-			{{-- {!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
-			{!! Form::submit('Atras',['class' => 'btn btn-primary']) !!} --}}
-			{!! Form::close() !!}
-		</div>
+		{{-- {!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Atras',['class' => 'btn btn-primary']) !!} --}}
+		{!! Form::close() !!}
+	</div>
+
 @stop

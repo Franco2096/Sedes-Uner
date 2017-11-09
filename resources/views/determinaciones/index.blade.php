@@ -24,7 +24,8 @@
 			<th>Tecnica</th>
 			<th>Tipo</th>
 			<th>Estado</th>
-			<th>Operaciones</th>
+			<th colspan="2">Operaciones</th>
+
 
 		</thead>
 		@foreach($determinaciones as $determinacion)
@@ -34,15 +35,11 @@
 			<td>{{ $determinacion->tipo }}</td>
 			<td>{{ $determinacion->estado }}</td>
 
-			<td>{!! link_to_route('determinaciones.edit', $title = 'Editar', $parameters = $determinacion->id, $attributes = ['class' =>'btn btn-primary' ]) !!}</td>
+			<td>{!! link_to_route('determinaciones.edit', $title = 'Editar', $parameters = $determinacion->id, $attributes = ['class' =>'btn btn-primary btn-xs' ]) !!}</td>
 			<td>{!! Form::open(['route' =>['determinaciones.destroy', $determinacion->id], 'method' => 'DELETE']) !!}
-					{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
+					{!! Form::submit('Eliminar',['class' => 'btn btn-danger btn-xs']) !!}
 					{!! Form::close() !!}
 			</td>
-
-
-
-
 		</tbody>
 		@endforeach
 	</table>

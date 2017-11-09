@@ -9,10 +9,18 @@
 @endif
 @section('tabla')
 	@include('alerts.request')
-	{!! Form::open(['route' => 'clientes.store', 'method'=> 'POST']) !!}
-		@include('clientes.forms.cliente')
-		{!! Form::submit('Registrar',['class' => 'btn btn-primary',"onClick='verificar_campos()'"]) !!}
-	{!! Form::close() !!}
+	<div class="center-block">
+		<div class="container" >
+			<button type="button" class="btn btn-outline btn-info" onclick="history.go(-1); return false;">Volver</button>
+				{!! Form::open(['route' => 'clientes.store', 'method'=> 'POST']) !!}
+				<h1><center>Alta de Cliente</center></h1>
+					@include('clientes.forms.cliente')
+					<div class="pull-right">
+						{!! Form::submit('Registrar',['class' => 'btn btn-success btn-md',"onClick='verificar_campos()'"]) !!}
+					</div>
 
+				{!! Form::close() !!}
+		</div>
+	</div>
 
 @stop

@@ -54,29 +54,31 @@
 
 
 
-<div class="modal fade" id="myModal" role="dialog">
-	<div class="modal-dialog">
-		<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">Descripción del Servicio</h4>
 			</div>
-			<div class="modal-body">
-				<textarea class="form-group" name="bookId" id="bookId"  rows="8" cols="80" value="" readonly></textarea>
-			</div>
-			<div class="modal-footer">
-				<!--Uso la funcion onclick para llamar a la funcion en javascript-->
-				<button type="button" class="btn btn-danger btn-xs pull-left" data-dismiss="modal">Cerrar</button>
-			</div>
-
-		</div>
-	</div>
-</div>
 			</table>
 			{!! $solicitudes->render() !!}
 		</div>
+
+					<div class="modal fade" id="myModal" role="dialog">
+						<div class="modal-dialog">
+
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4 class="modal-title">Descripción del Servicio</h4>
+								</div>
+
+								<div class="modal-body">
+									<textarea class="form-group" name="bookId" id="bookId"  rows="8" cols="80" value="" readonly></textarea>
+								</div>
+								<div class="modal-footer">
+				
+									<button type="button" class="btn btn-danger btn-xs pull-left" data-dismiss="modal">Cerrar</button>
+								</div>
+
+							</div>
+						</div>
 	</div>
-</div>
+
 
 @stop
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
