@@ -21,16 +21,15 @@
 		 <a href="/presupuestos/create" class="btn btn-success nuevo" >Nuevo</a>
 	</div>
     <div >
-		<table class="table table-hover">
+		<table class="table table-bordered">
 			<thead>
-				<th>Tipo servicio</th>
-				<th>Fecha de presupuesto</th>
-				<th>Fecha de solicitud</th>
-				<th><center>Cliente</center></th>
-				<th>Estado</th>
-				<th>Total</th>
-				<th><center>Operaciones</center></th>
-				<th></th>
+				<th class="info"><center>Tipo servicio</center></th>
+				<th class="info"><center>Fecha de presupuesto</center></th>
+				<th class="info"><center>Fecha de solicitud</center></th>
+				<th class="info"><center>Cliente</center></th>
+				<th class="info"><center>Estado</center></th>
+				<th class="info"><center>Total</center></th>
+				<th class="info"><center>Operaciones</center></th>
 			</thead>
 			@foreach($presupuestos as $presupuesto)
 			<tbody>

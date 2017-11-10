@@ -2,9 +2,7 @@
 
 @section('tabla')
 @include('alerts.request')
-
-		<div class="col-md-6">
-
+		<table class="table-striped">
 			{!! Form::model($solicitud,['route' =>['solicitud.update', $solicitud->id], 'method' => 'PUT']) !!}
 
 			<div class="form-group">
@@ -25,17 +23,19 @@
 
 			<div class="form-group">
 				{!! Form::label('Fecha: ') !!}
-				{!! Form::datetime('fecha', \Carbon\Carbon::now()) !!}
+				{!! Form::datetime('fecha', $solicitud->fecha )!!}
 			</div>
 
-		<div class="col-md-6">
+
 				{!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
-		</div>
-		<div class="col-md-6">
+
 			<a href="/solicitud" class="btn btn-success">Atras </a>
-		</div>
+
 			{{-- {!! Form::submit('Actualizar',['class' => 'btn btn-primary']) !!}
 			{!! Form::submit('Atras',['class' => 'btn btn-primary']) !!} --}}
 			{!! Form::close() !!}
-		</div>
+		</table>
+
+
+
 @stop

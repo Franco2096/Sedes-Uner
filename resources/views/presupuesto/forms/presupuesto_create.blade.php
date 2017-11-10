@@ -62,7 +62,7 @@
             RefrescaProducto();
         });
 
-        //$('#pro_id').find('option[value="'+sel+'"]').remove();
+        $('#pro_id').find('option[value="'+sel+'"]').remove();
 
     }
 
@@ -233,7 +233,7 @@
                         <div class="form-group">
 
                             <select class="selectpicker form-control" id="pro_id" name="pro_id" data-width='100%' required>
-                                <option value="" disabled selected>Seleccionar Determinación</option>
+                                <option value="0" selected>Seleccionar Determinación</option>
                                 @foreach($determinaciones as $determinacion)
                                     <option value="{{$determinacion->id}}">{{ $determinacion->determinacion }}</option>
                                 @endforeach

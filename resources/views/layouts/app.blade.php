@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'UNER') }}
+                        <h4>Facultad de Bromatología</h4>
                     </a>
                     @yield('content')
                 </div>
@@ -85,7 +85,7 @@
     {!! Html::script('js/jquery.min.js') !!}
 
     {!! Html::script('js/bootstrap.min.js') !!}
-    
+
 
 
 </body>
